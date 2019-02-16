@@ -1,4 +1,4 @@
-## 2/16
+## 2/16: Feed view
 
 Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
 
@@ -24,7 +24,7 @@ Next:
 - [ ] Group events by "combine"
 - [ ] Group events by date
 
-## 2/15
+## 2/15: Hello, world! (Table view)
 
 Let's build the simplest possible useful thing:
 
