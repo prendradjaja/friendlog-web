@@ -19,6 +19,18 @@ API?)
 
 Cards/feed view (v0.1.1) exists! I think I need to fix something subtle with sorting, but it works!! Whoo.
 
+----
+
+Published on GitHub Pages! (I had to add a `window.prompt()` for API key in
+order to make this usable on my phone.) (v0.1.2)
+
+Once I do either of the following, I won't be able to use GH Pages anymore:
+
+- Move API key out of localStorage (as I noted yesterday)
+- [ ] Use a real database
+
+----
+
 Next:
 
 - [ ] Group events by "combine"
