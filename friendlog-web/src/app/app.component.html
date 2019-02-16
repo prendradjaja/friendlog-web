@@ -1,11 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>
-  Welcome to {{ title }}!
-</h1>
-<div>
+<div id="top">
   <a [attr.href]="newEntryUrl">New Entry</a>
+  &sdot;
+  <span id="last-entry">
+    Last entry: {{lastEntrySummary()}}
+  </span>
 </div>
-<table>
+<div id="cards">
+  <!-- <app-event-card [row]='exampleRowFull'></app-event-card> -->
+  <app-event-card *ngFor="let row of rows" [row]="row"></app-event-card>
+</div>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Timestamp</th>
@@ -28,4 +33,4 @@
       <td>{{row.other}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->

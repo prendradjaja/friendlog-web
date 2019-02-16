@@ -1,0 +1,20 @@
+<div *ngIf="row.who || row.what || row.when">
+  <div *ngIf="row.who || row.what" class="whowhat">
+    <span *ngIf="row.who" class="who">
+      {{row.who}}
+    </span>
+    <span *ngIf="row.who && row.what">&mdash;</span>
+    <span *ngIf="row.what">
+      {{row.what}}
+    </span>
+  </div>
+  <div *ngIf="row.when" class="timestamp">
+    {{row.when}}
+  </div>
+</div>
+<div *ngIf="row.notes">
+  {{row.notes}}
+</div>
+<div *ngIf="row.other">
+  {{row.other}}
+</div>

@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    border: gray 1px solid;
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-family: Helvetica;
+
+    & > div {
+        margin-bottom: 6px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    .whowhat {
+        // font-size: 18px;
+    }
+    .who {
+        font-weight: bold;
+    }
+    .timestamp {
+        color: #bbbbbb;
+        font-size: 12px;
+    }
+}

@@ -4,6 +4,16 @@ Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
 
 ----
 
+Event, EventGroup -- these are both data types and UI elements. How should I go about naming them?
+
+Huh, Angular (yep, that's why it's not AngularJS) adds stuff to CSS (does it
+add to bare CSS or is this just bc I'm using Sass? p sure it adds to bare CSS).
+Scoped styles, `:host`... stuff to learn about.
+
+Don't do too much stuff that's just bc of restrictions of your temporary spreadsheet DB. e.g. don't create too much infrastructure for handling "combine with PREVIOUS BY .TIMESTAMP" -- later it may become "combine with ID" or "combine with previous by .when"
+
+----
+
 . SeeTable -> Feed
   . Prefill "combine" with this URL
 https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes
