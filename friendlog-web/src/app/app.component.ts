@@ -18,15 +18,26 @@ export class AppComponent implements OnInit {
   constructor (private backendService: BackendService) {}
 
   ngOnInit() {
-    this.backendService.get().then(allRows => {
-      this.lastRow = allRows[allRows.length - 1];
-      this.rows = (
-        allRows
-        // .slice(allRows.length - 5)
-        .filter(isNonEmpty)
-      );
-      this.rows.sort(rowComparator);
-    });
+    this.backendService.get().then(
+      allRows => {
+        this.lastRow = allRows[allRows.length - 1];
+        this.rows = (
+          allRows
+          // .slice(allRows.length - 5)
+          .filter(isNonEmpty)
+        );
+        this.rows.sort(rowComparator);
+      },
+      err => {
+        const key = window.prompt('Set key (leave blank for no action)');
+        if (key) {
+          localStorage.setItem('friendlog/google-api-key', key);
+          location.reload();
+        }
+
+        // AIzaSyCQy_xb_H5KcWtzbpn6Fh5Ynup6zn8GehA
+      }
+    );
 
     this.exampleRowFull = new Row();
     this.exampleRowFull.who = 'Jane Doe';

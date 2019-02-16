@@ -13,16 +13,20 @@ export class BackendService {
 
   public get() {
     const API_KEY=localStorage.getItem('friendlog/google-api-key');
-    const RANGE='A1:G500';
-    const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
-    const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-    return this.http.get(url).toPromise().then(
-      res => this.parser.parse(res['values'] as string[][]),
-      err => {
-        window.alert('Error fetching from db');
-        return [];
-      }
-    );
+    if (API_KEY) {
+      const RANGE='A1:G500';
+      const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
+      const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+      return this.http.get(url).toPromise().then(
+        res => this.parser.parse(res['values'] as string[][]),
+        err => {
+          window.alert('Error fetching from db');
+          return [];
+        }
+      );
+    } else {
+      return Promise.reject();
+    }
   }
 }
 
