@@ -9,14 +9,13 @@ import { BackendService, Row } from './backend.service';
 export class AppComponent implements OnInit {
   title = 'friendlog-web';
   rows: Row[] = [];
+  newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
 
   constructor (private backendService: BackendService) {}
 
   ngOnInit() {
-    this.backendService.get().then(rows => {
-      const tail = rows.slice(rows.length - 5);
-      this.rows = tail;
-      console.log(tail);
-    })
+    this.backendService.get().then(allRows => {
+      this.rows = allRows.slice(allRows.length - 5);
+    });
   }
 }

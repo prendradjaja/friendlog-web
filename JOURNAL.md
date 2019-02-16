@@ -1,9 +1,23 @@
+## 2/16
+
+Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
+
+----
+
+. SeeTable -> Feed
+  . Prefill "combine" with this URL
+https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes
+View form URL https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform
+
+I wonder if prefilled GForm URLs can be dynamically generated? (and/or GForm
+API?)
+
 ## 2/15
 
 Let's build the simplest possible useful thing:
 
-- See most recent entries
-- Create a new entry
+- (See) See most recent entries
+- (Create) Create a new entry
 
 API token: https://console.developers.google.com/apis/dashboard
 
