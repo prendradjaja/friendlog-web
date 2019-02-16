@@ -33,6 +33,8 @@ Let's build the simplest possible useful thing:
 
 API token: https://console.developers.google.com/apis/dashboard
 
+- [ ] Don't store API token in localStorage
+
 I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
 
 How does this API token work? I know very little so far:
