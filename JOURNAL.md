@@ -33,7 +33,7 @@ Let's build the simplest possible useful thing:
 
 API token: https://console.developers.google.com/apis/dashboard
 
-- [ ] Don't store API token in localStorage
+- [ ] [Don't store API token in localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
 
 I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
 
