@@ -12,15 +12,17 @@ Scoped styles, `:host`... stuff to learn about.
 
 Don't do too much stuff that's just bc of restrictions of your temporary spreadsheet DB. e.g. don't create too much infrastructure for handling "combine with PREVIOUS BY .TIMESTAMP" -- later it may become "combine with ID" or "combine with previous by .when"
 
-----
-
-. SeeTable -> Feed
-  . Prefill "combine" with this URL
-https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes
-View form URL https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform
-
 I wonder if prefilled GForm URLs can be dynamically generated? (and/or GForm
 API?)
+
+----
+
+Cards/feed view (v0.1.1) exists! I think I need to fix something subtle with sorting, but it works!! Whoo.
+
+Next:
+
+- [ ] Group events by "combine"
+- [ ] Group events by date
 
 ## 2/15
 
@@ -40,11 +42,11 @@ How does this API token work? I know very little so far:
   documentation](https://developers.google.com/sheets/api/guides/concepts).
 - I had to turn on link sharing on my sheet in order to be able to access it
   with my API key.
-- (todo) Is my API key authorized to edit the sheet? I don't think so, because I only
+- [ ] Is my API key authorized to edit the sheet? I don't think so, because I only
   enabled read permissions on link sharing. I should check though!
 
 ----
 
 VSCode is nice!
 
-(todo) Learn async/await?
+- [ ] Learn async/await?

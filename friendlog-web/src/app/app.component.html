@@ -1,8 +1,9 @@
 <div id="top">
-  <a [attr.href]="newEntryUrl">New Entry</a>
+  <a [attr.href]="newEntryUrl">New entry</a>
   &sdot;
+  <a [attr.href]="newCombinedEntryUrl">From last</a>
   <span id="last-entry">
-    Last entry: {{lastEntrySummary()}}
+    ({{lastEntrySummary()}})
   </span>
 </div>
 <div id="cards">

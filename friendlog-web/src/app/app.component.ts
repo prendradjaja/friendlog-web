@@ -9,6 +9,7 @@ import { BackendService, Row } from './backend.service';
 export class AppComponent implements OnInit {
   rows: Row[] = [];
   newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
+  newCombinedEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes';
 
   exampleRowFull: Row;
 
@@ -24,36 +25,7 @@ export class AppComponent implements OnInit {
         // .slice(allRows.length - 5)
         .filter(isNonEmpty)
       );
-      this.rows.sort(
-        (a, b) => {
-          function toTimestamp(d: string): number {
-            return new Date(d).getTime();
-          }
-
-          /**
-           * Assuming x !== y
-           */
-          function compare(x, y) {
-            if (x < y) {
-              return 1;
-            } else { // x > y because of x !== y
-              return -1;
-            }
-          }
-
-          const aDate = toTimestamp(a.when);
-          const bDate = toTimestamp(b.when);
-          if (aDate !== bDate) {
-            return compare(aDate, bDate);
-          } else {
-            const aCreatedDate = toTimestamp(a.createdAt);
-            const bCreatedDate = toTimestamp(b.createdAt);
-
-            // I'm potentially breaking the x !== y rule, but timestamps should never be equal anyway...
-            return compare(aCreatedDate, bCreatedDate);
-          }
-        }
-      );
+      this.rows.sort(rowComparator);
     });
 
     this.exampleRowFull = new Row();
@@ -80,4 +52,36 @@ export class AppComponent implements OnInit {
 
 function isNonEmpty(row: Row): boolean {
   return [row.when, row.who, row.what, row.notes, row.other].some(x => !!x);
+}
+
+function toTimestamp(d: string): number {
+  return new Date(d).getTime();
+}
+
+/**
+ * Assuming x !== y
+ */
+function compare(x, y) {
+  if (x < y) {
+    return 1;
+  } else { // x > y because of x !== y
+    return -1;
+  }
+}
+
+/**
+ * Todo: Why does this seem to work correctly for things missing .when entirely (instead of just having .when equal to each other) even though I didn't write anything special for that?
+ */
+function rowComparator(a: Row, b: Row): number {
+  const aDate = toTimestamp(a.when);
+  const bDate = toTimestamp(b.when);
+  if (aDate !== bDate) {
+    return compare(aDate, bDate);
+  } else {
+    const aCreatedDate = toTimestamp(a.createdAt);
+    const bCreatedDate = toTimestamp(b.createdAt);
+
+    // I'm potentially breaking the x !== y rule, but timestamps should never be equal anyway...
+    return compare(aCreatedDate, bCreatedDate);
+  }
 }
