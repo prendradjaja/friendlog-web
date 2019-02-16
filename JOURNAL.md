@@ -31,10 +31,16 @@ Once I do either of the following, I won't be able to use GH Pages anymore:
 
 ----
 
-Next:
+Next (features):
 
 - [ ] Group events by "combine"
 - [ ] Group events by date
+
+Next (infra):
+
+- [ ] Unfuck my git repo / `npx ng` situation
+- [ ] Unfuck my deploy situation
+- [ ] Automate `version.html`
 
 ## 2/15: Hello, world! (Table view)
 
