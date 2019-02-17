@@ -35,7 +35,9 @@ VSCode is nice!
 
 - [ ] Learn async/await?
 
-## 2/16: Feed view
+
+
+## 2/16: Feed view. Published on GitHub Pages. Filter by friend.
 
 **v0.1.0:** Okay, with the "New Entry" link my super-minimal MVP is now done.
 
@@ -112,6 +114,4 @@ Next (features):
 Next (infra):
 
 - [x] Unfuck my git repo / `npx ng` situation
-- [ ] Unfuck my deploy situation
-- [ ] Automate `version.html`
-
+- [x] Unfuck my deploy situation
