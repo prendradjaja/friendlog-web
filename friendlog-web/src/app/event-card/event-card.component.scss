@@ -6,11 +6,8 @@
     margin-bottom: 8px;
     font-family: Helvetica;
 
-    & > div {
+    & > div:not(:last-child) {
         margin-bottom: 6px;
-        &:last-child {
-            margin-bottom: 0px;
-        }
     }
 
     .whowhat {
