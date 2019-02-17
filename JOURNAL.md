@@ -1,3 +1,33 @@
+## 2/15: Hello, world! (Table view)
+
+Let's build the simplest possible useful thing:
+
+- (See) See most recent entries
+- (Create) Create a new entry
+
+API token: https://console.developers.google.com/apis/dashboard
+
+- [ ] [Don't store API token in
+  localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
+
+I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
+
+How does this API token work? I know very little so far:
+
+- I think there's another mechanism (not API token) that I really should be
+  using. I forget what, but it's in the [Google Sheets API
+  documentation](https://developers.google.com/sheets/api/guides/concepts).
+- I had to turn on link sharing on my sheet in order to be able to access it
+  with my API key.
+- [ ] Is my API key authorized to edit the sheet? I don't think so, because I
+  only enabled read permissions on link sharing. I should check though!
+
+----
+
+VSCode is nice!
+
+- [ ] Learn async/await?
+
 ## 2/16: Feed view
 
 Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
@@ -48,6 +78,10 @@ v0.1.3: Filter by friend by clicking their name!
 
 ----
 
+v0.1.4: Style tweaks
+
+----
+
 Next (features):
 
 - [ ] Group events by "combine"
@@ -61,32 +95,3 @@ Next (infra):
 - [ ] Unfuck my deploy situation
 - [ ] Automate `version.html`
 
-## 2/15: Hello, world! (Table view)
-
-Let's build the simplest possible useful thing:
-
-- (See) See most recent entries
-- (Create) Create a new entry
-
-API token: https://console.developers.google.com/apis/dashboard
-
-- [ ] [Don't store API token in
-  localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
-
-I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
-
-How does this API token work? I know very little so far:
-
-- I think there's another mechanism (not API token) that I really should be
-  using. I forget what, but it's in the [Google Sheets API
-  documentation](https://developers.google.com/sheets/api/guides/concepts).
-- I had to turn on link sharing on my sheet in order to be able to access it
-  with my API key.
-- [ ] Is my API key authorized to edit the sheet? I don't think so, because I
-  only enabled read permissions on link sharing. I should check though!
-
-----
-
-VSCode is nice!
-
-- [ ] Learn async/await?
