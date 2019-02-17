@@ -44,6 +44,10 @@ rows, though.
 
 ----
 
+v0.1.3: Filter by friend by clicking their name!
+
+----
+
 Next (features):
 
 - [ ] Group events by "combine"

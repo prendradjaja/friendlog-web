@@ -2,6 +2,7 @@
 
 - Update `JOURNAL.md` (No changelog for now)
 - Update `package.json`
+- Commit
 - `git tag vA.B.C`
 - `git push`
 - `git push --tags`
