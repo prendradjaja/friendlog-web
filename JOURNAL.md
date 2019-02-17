@@ -4,20 +4,25 @@ Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
 
 ----
 
-Event, EventGroup -- these are both data types and UI elements. How should I go about naming them?
+Event, EventGroup -- these are both data types and UI elements. How should I
+go about naming them?
 
 Huh, Angular (yep, that's why it's not AngularJS) adds stuff to CSS (does it
 add to bare CSS or is this just bc I'm using Sass? p sure it adds to bare CSS).
 Scoped styles, `:host`... stuff to learn about.
 
-Don't do too much stuff that's just bc of restrictions of your temporary spreadsheet DB. e.g. don't create too much infrastructure for handling "combine with PREVIOUS BY .TIMESTAMP" -- later it may become "combine with ID" or "combine with previous by .when"
+Don't do too much stuff that's just bc of restrictions of your temporary
+spreadsheet DB. e.g. don't create too much infrastructure for handling
+"combine with PREVIOUS BY .TIMESTAMP" -- later it may become "combine with ID"
+or "combine with previous by .when"
 
 I wonder if prefilled GForm URLs can be dynamically generated? (and/or GForm
 API?)
 
 ----
 
-Cards/feed view (v0.1.1) exists! I think I need to fix something subtle with sorting, but it works!! Whoo.
+Cards/feed view (v0.1.1) exists! I think I need to fix something subtle with
+sorting, but it works!! Whoo.
 
 ----
 
@@ -28,6 +33,14 @@ Once I do either of the following, I won't be able to use GH Pages anymore:
 
 - Move API key out of localStorage (as I noted yesterday)
 - [ ] Use a real database
+
+----
+
+Q:What happens if I edit the sheet that form responses get stored in?
+
+A: From trying it out, it looks like Google Forms keeps track of what row it
+should add the next result in. (Even if you delete everything!) You can delete
+rows, though.
 
 ----
 
@@ -52,7 +65,8 @@ Let's build the simplest possible useful thing:
 
 API token: https://console.developers.google.com/apis/dashboard
 
-- [ ] [Don't store API token in localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
+- [ ] [Don't store API token in
+  localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
 
 I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
 
@@ -63,8 +77,8 @@ How does this API token work? I know very little so far:
   documentation](https://developers.google.com/sheets/api/guides/concepts).
 - I had to turn on link sharing on my sheet in order to be able to access it
   with my API key.
-- [ ] Is my API key authorized to edit the sheet? I don't think so, because I only
-  enabled read permissions on link sharing. I should check though!
+- [ ] Is my API key authorized to edit the sheet? I don't think so, because I
+  only enabled read permissions on link sharing. I should check though!
 
 ----
 
