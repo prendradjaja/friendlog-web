@@ -14,20 +14,14 @@ export class AppComponent implements OnInit {
   exampleRowFull: Row;
 
   private lastRow: Row;
+  // Only fetched once. Copy, don't mutate.
+  private allRows: Row[];
 
   constructor (private backendService: BackendService) {}
 
   ngOnInit() {
     this.backendService.get().then(
-      allRows => {
-        this.lastRow = allRows[allRows.length - 1];
-        this.rows = (
-          allRows
-          // .slice(allRows.length - 5)
-          .filter(isNonEmpty)
-        );
-        this.rows.sort(rowComparator);
-      },
+      allRows => this.onRowsReceived(allRows),
       err => {
         const key = window.prompt('Set key (leave blank for no action)');
         if (key) {
@@ -44,6 +38,25 @@ export class AppComponent implements OnInit {
     this.exampleRowFull.what = 'Coffee';
     this.exampleRowFull.notes = 'Some notes';
     this.exampleRowFull.other = 'Other stuff';
+  }
+
+  private onRowsReceived(allRows: Row[]) {
+    this.lastRow = allRows[allRows.length - 1];
+    this.allRows = allRows;
+    this.reset();
+  }
+
+  public filterByWho(who: string) {
+    this.rows = this.rows.filter(x => x.who === who);
+  }
+
+  public reset() {
+    this.rows = (
+      this.allRows.slice()
+      // .slice(allRows.length - 5)
+      .filter(isNonEmpty)
+    );
+    this.rows.sort(rowComparator);
   }
 
   public lastEntrySummary(): string {

@@ -1,4 +1,9 @@
 <div id="top">
+  <h1>
+    <a href="#" (click)="reset()">
+      Friendlog
+    </a>
+  </h1>
   <a [attr.href]="newEntryUrl">New entry</a>
   &sdot;
   <a [attr.href]="newCombinedEntryUrl">From last</a>
@@ -8,7 +13,10 @@
 </div>
 <div id="cards">
   <!-- <app-event-card [row]='exampleRowFull'></app-event-card> -->
-  <app-event-card *ngFor="let row of rows" [row]="row"></app-event-card>
+  <app-event-card *ngFor="let row of rows"
+                  [row]="row"
+                  (onClick)="filterByWho($event)">
+  </app-event-card>
 </div>
 
 <!-- <table>

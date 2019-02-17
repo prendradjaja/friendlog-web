@@ -49,10 +49,11 @@ Next (features):
 - [ ] Group events by "combine"
 - [ ] Group events by date
 - [ ] Handle line breaks
+- [x] Filter by friend
 
 Next (infra):
 
-- [ ] Unfuck my git repo / `npx ng` situation
+- [x] Unfuck my git repo / `npx ng` situation
 - [ ] Unfuck my deploy situation
 - [ ] Automate `version.html`
 

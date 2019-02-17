@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Row } from '../backend.service';
 
 @Component({
@@ -10,9 +10,15 @@ export class EventCardComponent implements OnInit {
 
   @Input() row: Row;
 
+  @Output() onClick: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleClick(who: string) {
+    this.onClick.emit(who);
   }
 
 }

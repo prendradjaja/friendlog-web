@@ -1,8 +1,21 @@
-:host {}
+:host {
+    padding-left: 12px;
+    display: block;
+}
 
 #last-entry {
     color: gray;
 }
 #cards {
     margin-top: 8px;
+}
+
+a {
+    color: #184489;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
 }
