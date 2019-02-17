@@ -37,7 +37,7 @@ VSCode is nice!
 
 ## 2/16: Feed view
 
-Okay, with the "New Entry" link my super-minimal MVP (v0.1.0) is done.
+**v0.1.0:** Okay, with the "New Entry" link my super-minimal MVP is now done.
 
 ----
 
@@ -58,12 +58,12 @@ API?)
 
 ----
 
-Cards/feed view (v0.1.1) exists! I think I need to fix something subtle with
+**v0.1.1:** Cards/feed view exists! I think I need to fix something subtle with
 sorting, but it works!! Whoo.
 
 ----
 
-Published on GitHub Pages! (I had to add a `window.prompt()` for API key in
+**v0.1.2:** Published on GitHub Pages! (I had to add a `window.prompt()` for API key in
 order to make this usable on my phone.) (v0.1.2)
 
 Once I do either of the following, I won't be able to use GH Pages anymore:
@@ -73,7 +73,7 @@ Once I do either of the following, I won't be able to use GH Pages anymore:
 
 ----
 
-Q:What happens if I edit the sheet that form responses get stored in?
+Q: What happens if I edit the sheet that form responses get stored in?
 
 A: From trying it out, it looks like Google Forms keeps track of what row it
 should add the next result in. (Even if you delete everything!) You can delete
@@ -81,11 +81,11 @@ rows, though.
 
 ----
 
-v0.1.3: Filter by friend by clicking their name!
+**v0.1.3:** Filter by friend by clicking their name!
 
 ----
 
-v0.1.4: Style tweaks
+**v0.1.4:** Style tweaks
 
 ----
 
