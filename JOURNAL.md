@@ -35,6 +35,7 @@ Next (features):
 
 - [ ] Group events by "combine"
 - [ ] Group events by date
+- [ ] Handle line breaks
 
 Next (infra):
 

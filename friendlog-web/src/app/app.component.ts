@@ -34,8 +34,6 @@ export class AppComponent implements OnInit {
           localStorage.setItem('friendlog/google-api-key', key);
           location.reload();
         }
-
-        // AIzaSyCQy_xb_H5KcWtzbpn6Fh5Ynup6zn8GehA
       }
     );
 
