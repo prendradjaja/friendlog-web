@@ -10,7 +10,14 @@ API token: https://console.developers.google.com/apis/dashboard
 - [ ] [Don't store API token in
   localStorage](https://dev.to/rdegges/please-stop-using-local-storage-1i04)
 
-I can GET spreadsheet data! Awesome. ([Code](./JOURNAL/hello-world-get.sh))
+I can GET spreadsheet data!
+
+```
+SPREADSHEET_ID=1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c
+curl https://sheets.googleapis.com/v4/spreadsheets/$SPREADSHEET_ID/values/A1:D8?key=$API_KEY
+```
+
+Awesome.
 
 How does this API token work? I know very little so far:
 
