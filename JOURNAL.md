@@ -82,6 +82,19 @@ v0.1.4: Style tweaks
 
 ----
 
+I wonder if there's a way to have `ng new` create a new project in the current
+directory (instead of creating a new directory. The problem I ran into
+(causing me to have to do `npm install` twice) is that I don't want to install
+`ng` globally, so I have to do:
+
+```
+npm init  # now there is a package.json
+npm install @angular/cli
+npx new someproj  # now there is a someproj/package.json
+```
+
+----
+
 Next (features):
 
 - [ ] Group events by "combine"
