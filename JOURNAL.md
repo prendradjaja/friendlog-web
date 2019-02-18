@@ -110,6 +110,14 @@ Also, I have nicer deploys now! (Untested. Will be tested with this version.)
 
 **v0.1.6:** Line breaks work. (Deploys work, nice!)
 
+Within this project and Bookworm, I'm realizing that I have to rein in my
+impulse to add nice functionality in hacky ways. I followed that impulse for
+adding caching to Bookworm, but I didn't add it to this project. I also
+spent a couple minutes adding back button support (via `window.onhashchange`)
+for this project, but ultimately decided not to (it would be better to use the
+Angular Router in this case -- I'd learn something new and create a cleaner
+and more robust solution).
+
 ----
 
 Next (features):
