@@ -102,6 +102,12 @@ npm install @angular/cli
 npx new someproj  # now there is a someproj/package.json
 ```
 
+## 2/17
+
+**v0.1.5:** Ellipsify.
+
+Also, I have nicer deploys now! (Untested. Will be tested with this version.)
+
 ----
 
 Next (features):
