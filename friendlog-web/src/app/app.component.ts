@@ -62,14 +62,21 @@ export class AppComponent implements OnInit {
   public lastEntrySummary(): string {
     const last = this.lastRow;
     if (last) {
-      return (
-        [last.combine, last.when, last.who, last.what, last.notes, last.other]
+      return ellipsify(
+        [last.combine ? 'combine' : null, last.when, last.who, last.what, last.notes, last.other]
         .filter(x => x).join(', ')
       );
     } else {
       return '...';
     }
   }
+}
+
+function ellipsify(s: string, maxLength = 50): string {
+  if (s.length > maxLength) {
+    return s.substring(0, maxLength) + '...';
+  }
+  return s;
 }
 
 function isNonEmpty(row: Row): boolean {
