@@ -1,0 +1,11 @@
+:host {
+    p {
+        margin-block-start: 0;
+    }
+    p:not(:last-child) {
+        margin-block-end: 0.7em;
+    }
+    p:last-child {
+        margin-block-end: 0;
+    }
+}

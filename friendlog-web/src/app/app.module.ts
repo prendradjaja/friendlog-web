@@ -4,11 +4,13 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { EventCardComponent } from './event-card/event-card.component';
+import { LongResponseFormatterComponent } from './long-response-formatter/long-response-formatter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventCardComponent
+    EventCardComponent,
+    LongResponseFormatterComponent
   ],
   imports: [
     BrowserModule,

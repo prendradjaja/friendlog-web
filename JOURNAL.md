@@ -108,13 +108,15 @@ npx new someproj  # now there is a someproj/package.json
 
 Also, I have nicer deploys now! (Untested. Will be tested with this version.)
 
+**v0.1.6:** Line breaks work. (Deploys work, nice!)
+
 ----
 
 Next (features):
 
 - [ ] Group events by "combine"
 - [ ] Group events by date
-- [ ] Handle line breaks
+- [x] Handle line breaks
 - [x] Filter by friend
 
 Next (infra):
