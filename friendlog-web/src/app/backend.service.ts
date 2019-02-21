@@ -11,6 +11,7 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
+  // todo get rid of duped code in getFriendGroups
   public get() {
     const API_KEY=localStorage.getItem('friendlog/google-api-key');
     if (API_KEY) {
@@ -21,6 +22,23 @@ export class BackendService {
         res => this.parser.parse(res['values'] as string[][]),
         err => {
           window.alert('Error fetching from db');
+          return [];
+        }
+      );
+    } else {
+      return Promise.reject();
+    }
+  }
+
+  public getFriendGroups() {
+    const API_KEY=localStorage.getItem('friendlog/google-api-key');
+    if (API_KEY) {
+      const RANGE='FriendGroups!A1:G500';
+      const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
+      const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+      return this.http.get(url).toPromise().then(
+        res => this.parser.parseFriendGroups(res['values'] as string[][]),
+        err => {
           return [];
         }
       );
@@ -69,6 +87,19 @@ class Parser {
     ret.what = row[E];
     ret.notes = row[F];
     ret.other = row[G];
+    return ret;
+  }
+
+  parseFriendGroups(rows: string[][]): string[][] {
+    const ret = [[]];
+    rows.forEach(row => {
+      const cell = row[0];
+      if (!cell) {
+        ret.push([]);
+      } else {
+        ret[ret.length - 1].push(cell);
+      }
+    });
     return ret;
   }
 

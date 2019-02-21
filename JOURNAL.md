@@ -118,10 +118,18 @@ for this project, but ultimately decided not to (it would be better to use the
 Angular Router in this case -- I'd learn something new and create a cleaner
 and more robust solution).
 
+## 2/20
+
+**v0.1.7:** Filter by friend at top.
+
+- [ ] Better styling for the top filter
+- [ ] "Loading or intentionally blank": Distinguish the two
+
 ----
 
 Next (features):
 
+- [ ] Private post flag?
 - [ ] Group events by "combine"
 - [ ] Group events by date
 - [x] Handle line breaks

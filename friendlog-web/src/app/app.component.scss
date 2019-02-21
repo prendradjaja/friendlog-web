@@ -20,3 +20,20 @@ h1 {
     font-size: 24px;
     margin-bottom: 8px;
 }
+
+#toggle-friend-groups {
+    margin-top: 8px;
+}
+
+#friend-groups-container {
+    margin-top: 6px;
+
+    .friend-group {
+        span:not(:last-child)::after {
+            content: ' · ';
+        }
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+}

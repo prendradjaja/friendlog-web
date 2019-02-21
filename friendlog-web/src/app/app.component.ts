@@ -8,6 +8,10 @@ import { BackendService, Row } from './backend.service';
 })
 export class AppComponent implements OnInit {
   rows: Row[] = [];
+
+  showFriendGroups = false;
+  friendGroups: string[][];
+
   newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
   newCombinedEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes';
 
@@ -20,6 +24,9 @@ export class AppComponent implements OnInit {
   constructor (private backendService: BackendService) {}
 
   ngOnInit() {
+    this.backendService.getFriendGroups().then(x => {
+      this.friendGroups = x;
+    });
     this.backendService.get().then(
       allRows => this.onRowsReceived(allRows),
       err => {
@@ -48,6 +55,10 @@ export class AppComponent implements OnInit {
 
   public filterByWho(who: string) {
     this.rows = this.rows.filter(x => x.who === who);
+  }
+
+  toggleFriendGroups() {
+    this.showFriendGroups = !this.showFriendGroups;
   }
 
   public reset() {
