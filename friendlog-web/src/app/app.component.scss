@@ -26,14 +26,14 @@ h1 {
 }
 
 #friend-groups-container {
-    margin-top: 6px;
+    margin-top: 8px;
 
     .friend-group {
         span:not(:last-child)::after {
             content: ' · ';
         }
         &:not(:last-child) {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
     }
 }

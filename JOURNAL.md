@@ -128,6 +128,8 @@ and more robust solution).
 
 **v0.1.8:** Only show first names in top filter.
 
+**v0.1.9:** Tweak spacing.
+
 ----
 
 Next (features):
