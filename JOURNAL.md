@@ -124,6 +124,7 @@ and more robust solution).
 
 - [ ] Better styling for the top filter
 - [ ] "Loading or intentionally blank": Distinguish the two
+- [ ] Show which friend you're currently filtering by (e.g. by bolding their link in the top filter)
 
 ----
 
