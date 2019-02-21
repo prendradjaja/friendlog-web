@@ -126,6 +126,8 @@ and more robust solution).
 - [ ] "Loading or intentionally blank": Distinguish the two
 - [ ] Show which friend you're currently filtering by (e.g. by bolding their link in the top filter)
 
+**v0.1.8:** Only show first names in top filter.
+
 ----
 
 Next (features):

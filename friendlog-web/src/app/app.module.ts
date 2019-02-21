@@ -5,12 +5,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { LongResponseFormatterComponent } from './long-response-formatter/long-response-formatter.component';
+import { FirstNamePipe } from './first-name.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventCardComponent,
-    LongResponseFormatterComponent
+    LongResponseFormatterComponent,
+    FirstNamePipe
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@
   <div *ngIf="showFriendGroups" id="friend-groups-container">
     <div class="friend-group" *ngFor="let group of friendGroups">
       <span *ngFor="let friend of group">
-        <a href="#" (click)="reset(); filterByWho(friend)">{{friend}}</a>
+        <a href="#" (click)="reset(); filterByWho(friend)">{{friend | firstName}}</a>
       </span>
     </div>
   </div>
