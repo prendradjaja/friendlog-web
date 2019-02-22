@@ -1,1 +1,4 @@
-<p *ngFor="let line of lines">{{line}}</p>
+<!-- Is there a way to combine the below component into this one? -->
+<p *ngFor="let line of lines">
+    <app-paragraph-formatter [line]="line"></app-paragraph-formatter>
+</p>

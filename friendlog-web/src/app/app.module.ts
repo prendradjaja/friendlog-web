@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { LongResponseFormatterComponent } from './long-response-formatter/long-response-formatter.component';
 import { FirstNamePipe } from './first-name.pipe';
+import { ParagraphFormatterComponent } from './paragraph-formatter/paragraph-formatter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventCardComponent,
     LongResponseFormatterComponent,
-    FirstNamePipe
+    FirstNamePipe,
+    ParagraphFormatterComponent
   ],
   imports: [
     BrowserModule,

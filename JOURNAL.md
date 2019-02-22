@@ -130,10 +130,15 @@ and more robust solution).
 
 **v0.1.9:** Tweak spacing.
 
+## 2/22
+
+**v0.1.10:** "Redactions"!
+
 ----
 
 Next (features):
 
+- [ ] Use "key" instead of "comparator" -- implement or use lodash
 - [ ] Private post flag?
 - [ ] Group events by "combine"
 - [ ] Group events by date
