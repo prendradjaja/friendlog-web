@@ -134,6 +134,8 @@ and more robust solution).
 
 **v0.1.10:** "Redactions"!
 
+- [ ] Do something with redactions in Last Entry Preview
+
 ----
 
 Next (features):
