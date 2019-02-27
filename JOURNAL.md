@@ -140,6 +140,8 @@ and more robust solution).
 
 **v0.1.11:** Nicer timestamps.
 
+**v0.1.12:** Filter by "Other".
+
 ----
 
 For quite a few days now I've been blocked on difficult sorting. Things I
