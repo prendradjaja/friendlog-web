@@ -1,4 +1,4 @@
-<div *ngIf="row.who || row.what || row.when">
+<div>
   <div *ngIf="row.who || row.what" class="whowhat">
     <!-- Should this be a button or a link? -->
     <!-- How does (click)= work? <a> isn't an Angular component... is it? -->
@@ -6,8 +6,8 @@
     <span *ngIf="row.who && row.what"> &mdash; </span>
     <span *ngIf="row.what">{{row.what}}</span>
   </div>
-  <div *ngIf="row.when" class="timestamp">
-    {{row.when}}
+  <div class="timestamp">
+    {{when}}
   </div>
 </div>
 <div *ngIf="row.notes">

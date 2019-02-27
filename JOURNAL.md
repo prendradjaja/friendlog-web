@@ -136,12 +136,31 @@ and more robust solution).
 
 - [ ] Do something with redactions in Last Entry Preview
 
+## 2/26
+
+**v0.1.11:** Nicer timestamps.
+
+----
+
+For quite a few days now I've been blocked on difficult sorting. Things I
+want to do that are blocked:
+
+- [ ] Group events by "combine"
+- [ ] Group events by date
+
+Things I probably should do in order to facilitate that:
+
+(See branch `better-sorting`)
+
+- [ ] Surface the sort key (i.e. for Rows missing a .when, show the .createdAt to the user)
+- [ ] Use lodash's sortBy (which I believe supports sorting by multiple keys like with Python tuples, which is super nice and easy)
+
 ----
 
 Next (features):
 
-- [ ] Use "key" instead of "comparator" -- implement or use lodash
-- [ ] Private post flag?
+- [ ] Surface the sort key
+- [ ] Use lodash
 - [ ] Group events by "combine"
 - [ ] Group events by date
 - [x] Handle line breaks
