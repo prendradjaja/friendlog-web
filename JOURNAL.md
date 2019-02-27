@@ -168,6 +168,7 @@ Things I probably should do in order to facilitate that:
 Next (independent features):
 
 - [ ] Offline mode with Session Workers or App Cache
+- [ ] Show active filter
 
 Next (features related to each other):
 
