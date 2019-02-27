@@ -9,6 +9,7 @@ import { BackendService, Row } from './backend.service';
 export class AppComponent implements OnInit {
   rows: Row[] = [];
 
+  // todo rename friendgroups to filteroptions or something?
   showFriendGroups = false;
   friendGroups: string[][];
 
@@ -55,6 +56,17 @@ export class AppComponent implements OnInit {
 
   public filterByWho(who: string) {
     this.rows = this.rows.filter(x => x.who === who);
+  }
+
+  public filterByPhone() {
+    this.rows = this.rows.filter(x => {
+      const text = `${x.what} ${x.notes} ${x.other}`;
+      if (text.toLowerCase().indexOf('phone') !== -1) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 
   toggleFriendGroups() {

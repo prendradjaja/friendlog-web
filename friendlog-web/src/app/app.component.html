@@ -13,16 +13,21 @@
   <div id="toggle-friend-groups">
     <a href="#" (click)="toggleFriendGroups()">Filter by</a>
   </div>
-  <div *ngIf="showFriendGroups" id="friend-groups-container">
-    <div class="friend-group" *ngFor="let group of friendGroups">
+  <ul *ngIf="showFriendGroups" id="friend-groups-container">
+    <li class="friend-group" *ngFor="let group of friendGroups">
       <span *ngFor="let friend of group">
         <a href="#" (click)="reset(); filterByWho(friend)">{{friend | firstName}}</a>
       </span>
-    </div>
-    <div class="friend-group">
-      <a href="#" (click)="reset(); filterByWho('')">Other</a>
-    </div>
-  </div>
+    </li>
+    <li class="friend-group">
+      <span>
+        <a href="#" (click)="reset(); filterByWho('')">Other</a>
+      </span>
+      <span>
+        <a href="#" (click)="reset(); filterByPhone()">Phone</a>
+      </span>
+    </li>
+  </ul>
 </div>
 <div id="cards">
   <app-event-card *ngFor="let row of rows"

@@ -144,6 +144,8 @@ and more robust solution).
 
 **v0.1.13:** Hide redactions in Last Entry Preview.
 
+**v0.1.14:** Filter by phone call.
+
 ----
 
 For quite a few days now I've been blocked on difficult sorting. Things I
