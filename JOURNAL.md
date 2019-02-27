@@ -161,14 +161,16 @@ Things I probably should do in order to facilitate that:
 
 ----
 
-Next (features):
+Next (independent features):
+
+- [ ] Offline mode with Session Workers or App Cache
+
+Next (features related to each other):
 
 - [ ] Surface the sort key
 - [ ] Use lodash
 - [ ] Group events by "combine"
 - [ ] Group events by date
-- [x] Handle line breaks
-- [x] Filter by friend
 
 Next (infra):
 
