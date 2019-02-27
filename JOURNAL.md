@@ -146,6 +146,8 @@ and more robust solution).
 
 **v0.1.14:** Filter by phone call.
 
+**v0.1.15:** Fix for bug: If you filter by phone then click on a friend name (in an Event Card, not Top Filter), the filters are ANDed together. (This is no longer the case.)
+
 ----
 
 For quite a few days now I've been blocked on difficult sorting. Things I

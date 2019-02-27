@@ -1,7 +1,6 @@
 ## How to do a version bump
 
 - Update `JOURNAL.md` (No changelog for now)
-  - Be sure to include `PENDING_CHANGES.md`
   - Maybe also check `git log`
 - Update `package.json`
 - Commit

@@ -32,7 +32,7 @@
 <div id="cards">
   <app-event-card *ngFor="let row of rows"
                   [row]="row"
-                  (onClick)="filterByWho($event)">
+                  (onClick)="reset(); filterByWho($event)">
   </app-event-card>
   <div *ngIf="rows.length === 0" style="color: gray">
     (Loading or intentionally blank)
