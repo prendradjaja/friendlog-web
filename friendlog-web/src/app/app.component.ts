@@ -74,12 +74,20 @@ export class AppComponent implements OnInit {
     const last = this.lastRow;
     if (last) {
       return ellipsify(
-        [last.combine ? 'combine' : null, last.when, last.who, last.what, last.notes, last.other]
+        [last.combine ? 'combine' : null, last.when, last.who, last.what, hideRedactions(last.notes), hideRedactions(last.other)]
         .filter(x => x).join(', ')
       );
     } else {
       return '...';
     }
+  }
+}
+
+function hideRedactions(x: string) {
+  if (x.indexOf('~') !== -1) {
+    return '[contains redaction]';
+  } else {
+    return x;
   }
 }
 

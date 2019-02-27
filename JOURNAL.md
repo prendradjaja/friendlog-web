@@ -134,13 +134,15 @@ and more robust solution).
 
 **v0.1.10:** "Redactions"!
 
-- [ ] Do something with redactions in Last Entry Preview
+- [x] \(2/26) Do something with redactions in Last Entry Preview
 
 ## 2/26
 
 **v0.1.11:** Nicer timestamps.
 
 **v0.1.12:** Filter by "Other".
+
+**v0.1.13:** Hide redactions in Last Entry Preview.
 
 ----
 
