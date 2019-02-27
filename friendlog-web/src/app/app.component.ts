@@ -68,6 +68,20 @@ export class AppComponent implements OnInit {
       .filter(isNonEmpty)
     );
     this.rows.sort(rowComparator);
+    // this.rows.sort(keyComparator(_x => {
+    //   // todo better typing for keycomparator
+    //   let x = _x as Row;
+
+
+    //   // // jk this isn't what i want. i probably want elementwise key comparison like in python
+    //   // // i think i should just use lodash..?
+    //   // // and/or show createdat on whenless entries
+    //   // if (x.when) {
+    //   //   return -toTimestamp(x.when);
+    //   // } else {
+    //   //   return -toTimestamp(x.createdAt);
+    //   // }
+    // }));
   }
 
   public lastEntrySummary(): string {
@@ -124,4 +138,19 @@ function rowComparator(a: Row, b: Row): number {
     // I'm potentially breaking the x !== y rule, but timestamps should never be equal anyway...
     return compare(aCreatedDate, bCreatedDate);
   }
+}
+
+function keyComparator(keyFunc: Function) {
+  function comp(a, b) {
+    const _a = keyFunc(a);
+    const _b = keyFunc(b);
+    if (_a < _b) {
+      return -1;
+    } else if (_b > _a) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+  return comp;
 }
