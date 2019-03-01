@@ -19,15 +19,21 @@ export class BackendService {
       const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.http.get(url).toPromise().then(
-        res => this.parser.parse(res['values'] as string[][]),
+        res => {
+          localStorage.setItem('foo1', JSON.stringify(res['values']))
+          return this.parser.parse(res['values'] as string[][])
+        },
         err => {
           window.alert('Error fetching from db');
-          return [];
         }
       );
     } else {
       return Promise.reject();
     }
+  }
+
+  public getCached() {
+    return this.parser.parse(JSON.parse(localStorage.getItem('foo1')));
   }
 
   public getFriendGroups() {
@@ -37,7 +43,10 @@ export class BackendService {
       const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.http.get(url).toPromise().then(
-        res => this.parser.parseFriendGroups(res['values'] as string[][]),
+        res => {
+          localStorage.setItem('foo2', JSON.stringify(res['values']))
+          return this.parser.parseFriendGroups(res['values'] as string[][])
+        },
         err => {
           return [];
         }
@@ -46,7 +55,12 @@ export class BackendService {
       return Promise.reject();
     }
   }
+ 
+  public getFriendGroupsCached() {
+    return this.parser.parseFriendGroups(JSON.parse(localStorage.getItem('foo2')));
+  }
 }
+
 
 export class Row {
   // Changing columns requires changes in three places:

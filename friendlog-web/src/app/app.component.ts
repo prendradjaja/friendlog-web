@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService, Row } from './backend.service';
 
+
+const useOffline = true;
+const useOnline = false;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,10 +29,12 @@ export class AppComponent implements OnInit {
   constructor (private backendService: BackendService) {}
 
   ngOnInit() {
-    this.backendService.getFriendGroups().then(x => {
+    useOffline && (this.friendGroups = this.backendService.getFriendGroupsCached());
+    useOffline && this.onRowsReceived(this.backendService.getCached());
+    useOnline && this.backendService.getFriendGroups().then(x => {
       this.friendGroups = x;
     });
-    this.backendService.get().then(
+    useOnline && this.backendService.get().then(
       allRows => this.onRowsReceived(allRows),
       err => {
         const key = window.prompt('Set key (leave blank for no action)');
