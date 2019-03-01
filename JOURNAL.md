@@ -163,6 +163,10 @@ Things I probably should do in order to facilitate that:
 - [ ] Surface the sort key (i.e. for Rows missing a .when, show the .createdAt to the user)
 - [ ] Use lodash's sortBy (which I believe supports sorting by multiple keys like with Python tuples, which is super nice and easy)
 
+## 2/28
+
+**v0.1.16:** Show active filter as bold.
+
 ----
 
 Next (independent features):

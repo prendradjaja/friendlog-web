@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
 
   exampleRowFull: Row;
 
+  activeFilter: string;
+
   private lastRow: Row;
   // Only fetched once. Copy, don't mutate.
   private allRows: Row[];
@@ -55,10 +57,12 @@ export class AppComponent implements OnInit {
   }
 
   public filterByWho(who: string) {
+    this.activeFilter = who;
     this.rows = this.rows.filter(x => x.who === who);
   }
 
   public filterByPhone() {
+    this.activeFilter = 'Phone';
     this.rows = this.rows.filter(x => {
       const text = `${x.what} ${x.notes} ${x.other}`;
       if (text.toLowerCase().indexOf('phone') !== -1) {
@@ -74,6 +78,7 @@ export class AppComponent implements OnInit {
   }
 
   public reset() {
+    this.activeFilter = null;
     this.rows = (
       this.allRows.slice()
       // .slice(allRows.length - 5)

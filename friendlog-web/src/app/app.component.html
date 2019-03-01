@@ -16,15 +16,27 @@
   <ul *ngIf="showFriendGroups" id="friend-groups-container">
     <li class="friend-group" *ngFor="let group of friendGroups">
       <span *ngFor="let friend of group">
-        <a href="#" (click)="reset(); filterByWho(friend)">{{friend | firstName}}</a>
+        <a href="#"
+            [style.font-weight]="activeFilter === friend ? 'bold' : 'normal'"
+            (click)="reset(); filterByWho(friend)">
+          {{friend | firstName}}
+        </a>
       </span>
     </li>
     <li class="friend-group">
       <span>
-        <a href="#" (click)="reset(); filterByWho('')">Other</a>
+        <a href="#"
+            [style.font-weight]="activeFilter === '' ? 'bold' : 'normal'"
+            (click)="reset(); filterByWho('')">
+          Other
+        </a>
       </span>
       <span>
-        <a href="#" (click)="reset(); filterByPhone()">Phone</a>
+        <a href="#"
+            [style.font-weight]="activeFilter === 'Phone' ? 'bold' : 'normal'"
+            (click)="reset(); filterByPhone()">
+          Phone
+        </a>
       </span>
     </li>
   </ul>
