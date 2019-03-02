@@ -167,12 +167,13 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.16:** Show active filter as bold.
 
+**v0.1.17:** Fix null bug that broke Last Entry Summary.
+
 ----
 
 Next (independent features):
 
 - [ ] Offline mode with Session Workers or App Cache
-- [ ] Show active filter
 
 Next (features related to each other):
 

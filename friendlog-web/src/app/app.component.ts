@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
 }
 
 function hideRedactions(x: string) {
-  if (x.indexOf('~') !== -1) {
+  if (x && x.indexOf('~') !== -1) {
     return '[contains redaction]';
   } else {
     return x;
