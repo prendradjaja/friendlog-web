@@ -184,8 +184,7 @@ Next (features):
 Next (infra):
 
 - [ ] Use lodash
-- [x] Unfuck my git repo / `npx ng` situation
-- [x] Unfuck my deploy situation
+- [ ] Unfuck my nested dirs / multiple package.jsons situation
 
 Probably don't do:
 - Group events by "combine" (combine is a hack that I shouldn't sink time into when I will want a better solution anyway)
