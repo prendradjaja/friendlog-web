@@ -171,18 +171,28 @@ Things I probably should do in order to facilitate that:
 
 ----
 
-Next (independent features):
+Next (features):
 
+- [ ] Bad caching
+- [ ] Good caching
 - [ ] Offline mode with Session Workers or App Cache
-
-Next (features related to each other):
-
-- [ ] Surface the sort key
-- [ ] Use lodash
-- [ ] Group events by "combine"
+- [ ] Use Google Forms "go to section based on answer". Probably the best way to do this is:
+    - Section 1 is basically the same as now, except with a "Multiple people" option in the dropdown.
+        - After section 1: Submit form (This is for the case where you leave "who" blank)
+        - Use "Go to section based on answer" for the "Who" question
+        - For "Multi people", use "Go to section 3"
+        - For every other option, use "Continue to next section"
+    - Section 2 has no questions. After 2, submit form.
+    - Section 3 is a Checkboxes with all the ppl.
 - [ ] Group events by date
+- [ ] \(Theoretically nice) Keep all URLs secret
+    - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
 
 Next (infra):
 
+- [ ] Use lodash
 - [x] Unfuck my git repo / `npx ng` situation
 - [x] Unfuck my deploy situation
+
+Probably don't do:
+- Group events by "combine" (combine is a hack that I shouldn't sink time into when I will want a better solution anyway)
