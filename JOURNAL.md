@@ -176,14 +176,7 @@ Next (features):
 - [ ] Bad caching
 - [ ] Good caching
 - [ ] Offline mode with Session Workers or App Cache
-- [ ] Use Google Forms "go to section based on answer". Probably the best way to do this is:
-    - Section 1 is basically the same as now, except with a "Multiple people" option in the dropdown.
-        - After section 1: Submit form (This is for the case where you leave "who" blank)
-        - Use "Go to section based on answer" for the "Who" question
-        - For "Multi people", use "Go to section 3"
-        - For every other option, use "Continue to next section"
-    - Section 2 has no questions. After 2, submit form.
-    - Section 3 is a Checkboxes with all the ppl.
+- [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Group events by date
 - [ ] \(Theoretically nice) Keep all URLs secret
     - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
@@ -196,3 +189,16 @@ Next (infra):
 
 Probably don't do:
 - Group events by "combine" (combine is a hack that I shouldn't sink time into when I will want a better solution anyway)
+
+Implementation details for multi-person support with Google Forms:
+- Creating entries
+    - Section 1 is basically the same as now, except with a "Multiple people" option in the dropdown.
+        - After section 1: Submit form (This is for the case where you leave "who" blank)
+        - Use "Go to section based on answer" for the "Who" question
+        - For "Multi people", use "Go to section 3"
+        - For every other option, use "Continue to next section"
+    - Section 2 has no questions. After 2, submit form.
+    - Section 3 is a Checkboxes with all the ppl.
+- Displaying and filtering
+    - Just display ppl's names in alpha order
+    - When filtering for e.g. Alice, any event with Alice (e.g. dinner with Alice and Bob) should count
