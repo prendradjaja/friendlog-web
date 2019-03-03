@@ -179,9 +179,13 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.20:** Fix FAB compatibility -- the previous version (text-based)'s vertical alignment was hard-coded based on my desktop browser, but (of course) broke on other browsers (including my phone). This one is a plus sign constructed out of two rectangles with CSS.
 
+It took a sec to find a good implementation of the plus icon to work with... I found [this icon site](https://cssicon.space/#/) but positioning took effort (the icon wasn't just already inside a "box"), so I didn't use it.
+
 **v0.1.21:** FAB: LOL I forgot position: fixed
 
 **v0.1.22:** FAB: Disable :active style until I fix it
+
+**v0.1.23:** Enable offline development with caching (requires editing source to enable, unlike Bookworm, which currently always uses caching if available [and fails gracefully and stuff, I think]).
 
 ----
 

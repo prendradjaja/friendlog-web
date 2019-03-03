@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
 
+const READ_CACHE = false;
+const WRITE_CACHE = false;  // READ_CACHE must be false for this to matter
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +14,25 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
+  private getAsPromise(url) {
+    const key = 'friendlog/temp-offline/' + url;
+    if (!READ_CACHE) {
+      return this.http.get(url).toPromise().then(x => {
+        if (WRITE_CACHE) {
+          localStorage.setItem(key, JSON.stringify(x));
+        }
+        return x;
+      });
+    } else {
+      const cached = localStorage.getItem(key);
+      if (cached) {
+        return Promise.resolve(JSON.parse(cached));
+      } else {
+        return Promise.reject();
+      }
+    }
+  }
+
   // todo get rid of duped code in getFriendGroups
   public get() {
     const API_KEY=localStorage.getItem('friendlog/google-api-key');
@@ -18,7 +40,7 @@ export class BackendService {
       const RANGE='A1:G500';
       const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-      return this.http.get(url).toPromise().then(
+      return this.getAsPromise(url).then(
         res => this.parser.parse(res['values'] as string[][]),
         err => {
           window.alert('Error fetching from db');
@@ -36,7 +58,7 @@ export class BackendService {
       const RANGE='FriendGroups!A1:G500';
       const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-      return this.http.get(url).toPromise().then(
+      return this.getAsPromise(url).then(
         res => this.parser.parseFriendGroups(res['values'] as string[][]),
         err => {
           return [];
