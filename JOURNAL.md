@@ -181,6 +181,8 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.21:** FAB: LOL I forgot position: fixed
 
+**v0.1.22:** FAB: Disable :active style until I fix it
+
 ----
 
 Next (features):
