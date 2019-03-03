@@ -187,6 +187,8 @@ It took a sec to find a good implementation of the plus icon to work with... I f
 
 **v0.1.23:** Enable offline development with caching (requires editing source to enable, unlike Bookworm, which currently always uses caching if available [and fails gracefully and stuff, I think]).
 
+**NEXT:** Style: Soften FAB shadow.
+
 ----
 
 Next (features):
