@@ -192,6 +192,7 @@ Next (features):
 - [ ] Group events by date
 - [ ] \(Theoretically nice) Keep all URLs secret
     - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
+- [ ] Link everything (form, sheet, app, repo) to each other
 
 Next (infra):
 
