@@ -64,13 +64,13 @@ a#new-entry-fab {
     font-size: $font-size;
     font-weight: 300;
 
-    :active {
-        display: block;
-        height: $diameter;
-        width: $diameter;
-        border-radius: $radius;
-        background: lighten(#184489, 10%);
-    }
+    // :active {
+    //     display: block;
+    //     height: $diameter;
+    //     width: $diameter;
+    //     border-radius: $radius;
+    //     background: lighten(#184489, 10%);
+    // }
 
     // Adapted from https://jsfiddle.net/psullivan6/0eL3jezk/
     .plus-icon {
