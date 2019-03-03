@@ -198,6 +198,7 @@ Next (features):
 - [ ] Fix styling for FAB
 - [ ] Favicon
 - [ ] Dark mode
+- [ ] Merge "other" and "notes"
 
 Next (infra):
 
