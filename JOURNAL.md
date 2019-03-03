@@ -173,6 +173,8 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.19:** Add New Entry "FAB."
 
+**v0.1.20:** Fix FAB compatibility -- the previous version (text-based)'s vertical alignment was hard-coded based on my desktop browser, but (of course) broke on other browsers (including my phone). This one is a plus sign constructed out of two rectangles with CSS.
+
 ----
 
 Next (features):

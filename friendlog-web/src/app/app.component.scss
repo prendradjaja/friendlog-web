@@ -71,4 +71,42 @@ a#new-entry-fab {
         border-radius: $radius;
         background: lighten(#184489, 10%);
     }
+
+    // Adapted from https://jsfiddle.net/psullivan6/0eL3jezk/
+    .plus-icon {
+        $size: 22px;
+        $thickness: 3px;
+
+        position: relative;
+        top: ($diameter - $size) / 2;
+        left: ($diameter - $size) / 2;
+
+        width: $size;
+        height: $size;
+
+        &:before,
+        &:after{
+            content: "";
+            position: absolute;
+            background-color: white;
+        }
+
+        // Vertical line
+        &:before{
+            top: 0;
+            left: 50%;
+            width: $thickness;
+            height: 100%;
+            margin-left: -$thickness / 2;
+        }
+
+        // Horizontal line
+        &:after{
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: $thickness;
+            margin-top: -$thickness / 2;
+        }
+    }
 }
