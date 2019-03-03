@@ -215,6 +215,7 @@ Next (features):
 - [ ] Favicon
 - [ ] Dark mode
 - [ ] Merge "other" and "notes"
+- [ ] Search (type to filter by any string)
 
 Next (infra):
 
