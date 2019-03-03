@@ -53,7 +53,7 @@ a#new-entry-fab {
     width: $diameter;
     border-radius: $radius;
 
-    position: absolute;
+    position: fixed;
     bottom: $offset;
     right: $offset;
 
