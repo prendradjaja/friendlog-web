@@ -169,6 +169,10 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.17:** Fix null bug that broke Last Entry Summary.
 
+**v0.1.18:**
+
+**v0.1.19:** Add New Entry "FAB."
+
 ----
 
 Next (features):

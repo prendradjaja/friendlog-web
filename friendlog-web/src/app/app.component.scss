@@ -38,3 +38,37 @@ h1 {
         }
     }
 }
+
+// The term FAB comes from Material Design
+a#new-entry-fab {
+    $diameter: 50px;
+    $radius: $diameter / 2;
+    $offset: 30px;
+    $line-height: $diameter - 8px;
+    $font-size: 42px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+
+    display: block;
+    height: $diameter;
+    width: $diameter;
+    border-radius: $radius;
+
+    position: absolute;
+    bottom: $offset;
+    right: $offset;
+
+    background: #184489;
+    color: white;
+    text-align: center;
+    line-height: $line-height;
+    font-size: $font-size;
+    font-weight: 300;
+
+    :active {
+        display: block;
+        height: $diameter;
+        width: $diameter;
+        border-radius: $radius;
+        background: lighten(#184489, 10%);
+    }
+}
