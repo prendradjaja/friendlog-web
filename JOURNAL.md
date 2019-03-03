@@ -167,9 +167,13 @@ Things I probably should do in order to facilitate that:
 
 **v0.1.16:** Show active filter as bold.
 
+## 3/1
+
 **v0.1.17:** Fix null bug that broke Last Entry Summary.
 
-**v0.1.18:**
+## 3/2
+
+**v0.1.18:** Style tweak for mobile: max-width 400 instead of width 300
 
 **v0.1.19:** Add New Entry "FAB."
 
