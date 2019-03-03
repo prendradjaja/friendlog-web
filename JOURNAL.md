@@ -195,6 +195,7 @@ Next (features):
 
 Next (infra):
 
+- [ ] CD (not one-button deploy -- and don't make deploys easier unless it's CD, so I'm forced to learn Travis or something)
 - [ ] Use lodash
 - [ ] Unfuck my nested dirs / multiple package.jsons situation
 
