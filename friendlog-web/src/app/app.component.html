@@ -13,11 +13,11 @@
   <span id="last-entry">
     ({{lastEntrySummary()}})
   </span>
-  <div id="toggle-friend-groups">
-    <a href="#" (click)="toggleFriendGroups()">Filter by</a>
+  <div id="toggle-filters">
+    <a href="#" (click)="toggleFilters()">Filter by</a>
   </div>
-  <ul *ngIf="showFriendGroups" id="friend-groups-container">
-    <li class="friend-group" *ngFor="let group of friendGroups">
+  <ul *ngIf="showFilters" id="filters-container">
+    <li class="filter-group" *ngFor="let group of friendGroups">
       <span *ngFor="let friend of group">
         <a href="#"
             [style.font-weight]="activeFilter === friend ? 'bold' : 'normal'"
@@ -26,7 +26,7 @@
         </a>
       </span>
     </li>
-    <li class="friend-group">
+    <li class="filter-group">
       <span>
         <a href="#"
             [style.font-weight]="activeFilter === '' ? 'bold' : 'normal'"

@@ -197,6 +197,8 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.24:** Style: Soften FAB shadow.
 
+**NEXT:** Rename friend groups to filter groups (not user visible)
+
 ----
 
 Next (features):

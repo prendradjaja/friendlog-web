@@ -9,8 +9,7 @@ import { BackendService, Row } from './backend.service';
 export class AppComponent implements OnInit {
   rows: Row[] = [];
 
-  // todo rename friendgroups to filteroptions or something?
-  showFriendGroups = false;
+  showFilters = false;
   friendGroups: string[][];
 
   newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
@@ -73,8 +72,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  toggleFriendGroups() {
-    this.showFriendGroups = !this.showFriendGroups;
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
   }
 
   public reset() {
