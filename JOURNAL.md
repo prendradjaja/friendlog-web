@@ -185,6 +185,14 @@ It took a sec to find a good implementation of the plus icon to work with... I f
 
 **v0.1.22:** FAB: Disable :active style until I fix it
 
+----
+
+Also, I figured out a way to record multi-person hangouts with Forms. But this will turn the form from a one-page thing to two or three pages (even in the much more common single-friend hangout case). I think this is worth it, but first I think I'll probably try a two-page form for a few days to see if it's too annoying. (It would suck to build it and only then realize that having two pages is a pain.)
+
+It'll be nice to get rid of the `combine` hack.
+
+## 3/3
+
 **v0.1.23:** Enable offline development with caching (requires editing source to enable, unlike Bookworm, which currently always uses caching if available [and fails gracefully and stuff, I think]).
 
 **v0.1.24:** Style: Soften FAB shadow.
