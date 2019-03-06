@@ -15,6 +15,7 @@
   </span>
   <div id="toggle-filters">
     <a href="#" (click)="toggleFilters()">Filter by</a>
+    (<a href="#" (click)="toggleMerge()">{{ mergeGroups ? 'Merged' : 'Normal' }}</a>)
   </div>
   <ul *ngIf="showFilters" id="filters-container">
     <li class="filter-group" *ngFor="let group of friendGroups">

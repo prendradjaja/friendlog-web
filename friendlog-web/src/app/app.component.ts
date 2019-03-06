@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
 
   showFilters = false;
   friendGroups: string[][];
+  allFriendGroups: string[][];
+  mergeGroups = false;
 
   newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
   newCombinedEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes';
@@ -27,7 +29,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.backendService.getFriendGroups().then(x => {
-      this.friendGroups = x;
+      this.allFriendGroups = x;
+      this.updateFriendGroups();
     });
     this.backendService.get().then(
       allRows => this.onRowsReceived(allRows),
@@ -47,6 +50,28 @@ export class AppComponent implements OnInit {
     this.exampleRowFull.what = 'Coffee';
     this.exampleRowFull.notes = 'Some notes';
     this.exampleRowFull.other = 'Other stuff';
+  }
+
+  private updateFriendGroups() {
+    const x = this.allFriendGroups.slice();
+    if (this.mergeGroups) {
+      // The silly logic behind the naming is... no-underscore is the flag, and with-underscore is the method
+      this.friendGroups = this._mergeGroups(x);
+    } else {
+      this.friendGroups = x;
+    }
+  }
+
+  /*
+   * Returns a new array. Does not mutate original.
+   */
+  private _mergeGroups(groups: string[][]) {
+    let friends = [];
+    for (let g of groups) {
+      friends = friends.concat(g);
+    }
+    friends.sort();
+    return [friends];
   }
 
   private onRowsReceived(allRows: Row[]) {
@@ -74,6 +99,11 @@ export class AppComponent implements OnInit {
 
   toggleFilters() {
     this.showFilters = !this.showFilters;
+  }
+
+  toggleMerge() {
+    this.mergeGroups = !this.mergeGroups;
+    this.updateFriendGroups();
   }
 
   public reset() {
