@@ -202,23 +202,29 @@ It'll be nice to get rid of the `combine` hack.
 - Rename friend groups to filter groups (not user visible)
 - Add option to merge friend groups together (for use when showing people friendlog)
 
+## 3/7
+
+**v0.1.26:** Add GitHub link
+
 ----
 
 Next (features):
 
-- [ ] Bad caching
+- [ ] Keep all URLs secret
+    - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
 - [ ] Good caching
-- [ ] Offline mode with Session Workers or App Cache
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Group events by date
-- [ ] \(Theoretically nice) Keep all URLs secret
-    - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
 - [ ] Link everything (form, sheet, app, repo) to each other
 - [ ] Fix styling for FAB
 - [ ] Favicon
 - [ ] Dark mode
 - [ ] Merge "other" and "notes"
 - [ ] Search (type to filter by any string)
+
+Next (requires my own data entry and/or backend):
+
+- [ ] Offline mode with Session Workers or App Cache
 
 Next (infra):
 

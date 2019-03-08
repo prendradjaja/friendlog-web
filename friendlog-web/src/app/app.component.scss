@@ -4,6 +4,15 @@
     display: block;
 }
 
+header {
+    h1 {
+        display: inline-block;
+    }
+    span {
+        margin-left: 10px;
+    }
+}
+
 #last-entry {
     color: gray;
 }

@@ -1,12 +1,15 @@
+<a id="new-entry-fab" [attr.href]="newEntryUrl">
+  <div class="plus-icon"></div>
+</a>
 <div id="top">
-  <h1>
-    <a href="#" (click)="reset()">
-      Friendlog
-    </a>
-  </h1>
-  <a id="new-entry-fab" [attr.href]="newEntryUrl">
-    <div class="plus-icon"></div>
-  </a>
+  <header>
+    <h1>
+      <a href="#" (click)="reset()">Friendlog</a>
+    </h1>
+    <span>
+      <a href="https://github.com/prendradjaja/friendlog-web">GitHub</a>
+    </span>
+  </header>
   <a [attr.href]="newEntryUrl">New entry</a>
   &sdot;
   <a [attr.href]="newCombinedEntryUrl">From last</a>
