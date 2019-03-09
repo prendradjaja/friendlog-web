@@ -206,6 +206,13 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.26:** Add GitHub link
 
+## 3/9
+
+
+**NEXT:**
+
+- Favicon
+
 ----
 
 Next (features):
@@ -215,10 +222,6 @@ Next (features):
 - [ ] Good caching
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Group events by date
-- [ ] Link everything (form, sheet, app, repo) to each other
-- [ ] Fix styling for FAB
-- [ ] Favicon
-- [ ] Dark mode
 - [ ] Merge "other" and "notes"
 - [ ] Search (type to filter by any string)
 
