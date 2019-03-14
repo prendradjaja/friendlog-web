@@ -208,10 +208,11 @@ It'll be nice to get rid of the `combine` hack.
 
 ## 3/9
 
+- Favicon (no version bump)
 
-**NEXT:**
+## 3/13
 
-- Favicon
+**v0.1.27:** Fix date logic (& favicon)
 
 ----
 
@@ -219,6 +220,7 @@ Next (features):
 
 - [ ] Keep all URLs secret
     - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
+    - [ ] And then link to responses sheet
 - [ ] Good caching
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Group events by date

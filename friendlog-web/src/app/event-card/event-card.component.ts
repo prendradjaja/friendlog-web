@@ -30,14 +30,15 @@ export class EventCardComponent implements OnInit {
 function formatDate(_d: string) {
   const d = new Date(_d);
   const t = d.getTime();
-  const now = new Date().getTime();
+  const now = new Date();
+  const endOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(),23,59,59,99).getTime();
   const DAY = 1000 * 60 * 60 * 24;
   const WEEK = DAY * 7;
-  if (now - t < DAY) {
+  if (endOfToday - t < DAY) {
     return 'Today';
-  } else if (now - t < DAY * 2) {
+  } else if (endOfToday - t < DAY * 2) {
     return 'Yesterday';
-  } else if (now - t < WEEK) {
+  } else if (endOfToday - t < WEEK) {
     return dayOfWeek(d) + ' ' + (d.getMonth() + 1) + '/' + d.getDate();
   } else {
     return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear() + ' (' + dayOfWeek(d) + ')';
