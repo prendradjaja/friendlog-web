@@ -54,7 +54,7 @@ export class CalendarViewComponent implements OnInit, OnChanges {
 
   private computeEventsByDate(): void {
     this.eventsByDate = {};
-    this.allRows
+    this.allRows && this.allRows
     .filter(x => !this.who || x.who === this.who)
     .forEach(row => {
       const key = stos(row.when);
