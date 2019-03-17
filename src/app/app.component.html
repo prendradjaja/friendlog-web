@@ -50,6 +50,10 @@
     </li>
   </ul>
 </div>
+
+<calendar-view [allRows]="allRows" [who]="activeFilter" (filterByDate)="filterByDate($event)">
+</calendar-view>
+
 <div id="cards">
   <app-event-card *ngFor="let row of rows"
                   [row]="row"
