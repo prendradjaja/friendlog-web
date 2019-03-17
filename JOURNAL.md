@@ -233,6 +233,7 @@ Next (requires my own data entry and/or backend):
 
 Next (infra):
 
+- [ ] Prettier
 - [ ] CD (not one-button deploy -- and don't make deploys easier unless it's CD, so I'm forced to learn Travis or something)
 - [ ] Use lodash
 - [ ] Unfuck my nested dirs / multiple package.jsons situation
