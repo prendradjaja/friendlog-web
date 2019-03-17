@@ -7,6 +7,8 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { LongResponseFormatterComponent } from './long-response-formatter/long-response-formatter.component';
 import { FirstNamePipe } from './first-name.pipe';
 import { ParagraphFormatterComponent } from './paragraph-formatter/paragraph-formatter.component';
+import { CalendarViewComponent } from 'calendar-view/calendar-view.component';
+import { CalendarDayDotsComponent } from 'calendar-day-dots/calendar-day-dots.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ParagraphFormatterComponent } from './paragraph-formatter/paragraph-for
     EventCardComponent,
     LongResponseFormatterComponent,
     FirstNamePipe,
-    ParagraphFormatterComponent
+    ParagraphFormatterComponent,
+    CalendarViewComponent,
+    CalendarDayDotsComponent
   ],
   imports: [
     BrowserModule,
