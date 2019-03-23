@@ -12,11 +12,17 @@ export class LongResponseFormatterComponent implements OnInit {
   @Input() text;
 
   lines;
+  maxLines = 3;
+  showMore = false;
 
   constructor() { }
 
   ngOnInit() {
     this.lines = this.text.split('\n\n');
+  }
+
+  toggleShowMore() {
+    this.showMore = !this.showMore;
   }
 
 }
