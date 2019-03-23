@@ -49,7 +49,6 @@ export class AppComponent implements OnInit {
     this.exampleRowFull.when = 'asdf';
     this.exampleRowFull.what = 'Coffee';
     this.exampleRowFull.notes = 'Some notes';
-    this.exampleRowFull.other = 'Other stuff';
   }
 
   private updateFriendGroups() {
@@ -88,7 +87,7 @@ export class AppComponent implements OnInit {
   public filterByPhone() {
     this.activeFilter = 'Phone';
     this.rows = this.rows.filter(x => {
-      const text = `${x.what} ${x.notes} ${x.other}`;
+      const text = `${x.what} ${x.notes}`;
       if (text.toLowerCase().indexOf('phone') !== -1) {
         return true;
       } else {
@@ -120,7 +119,7 @@ export class AppComponent implements OnInit {
     const last = this.lastRow;
     if (last) {
       return ellipsify(
-        [last.combine ? 'combine' : null, last.when, last.who, last.what, hideRedactions(last.notes), hideRedactions(last.other)]
+        [last.combine ? 'combine' : null, last.when, last.who, last.what, hideRedactions(last.notes)]
         .filter(x => x).join(', ')
       );
     } else {
@@ -145,7 +144,7 @@ function ellipsify(s: string, maxLength = 50): string {
 }
 
 function isNonEmpty(row: Row): boolean {
-  return [row.when, row.who, row.what, row.notes, row.other].some(x => !!x);
+  return [row.when, row.who, row.what, row.notes].some(x => !!x);
 }
 
 function toTimestamp(d: string): number {

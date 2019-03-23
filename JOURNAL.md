@@ -214,6 +214,12 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.27:** Fix date logic (& favicon)
 
+## 3/23
+
+**NEXT:**
+
+- Merge "other" and "notes"
+
 ----
 
 Next (features):
@@ -224,12 +230,16 @@ Next (features):
 - [ ] Good caching
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Group events by date
-- [ ] Merge "other" and "notes"
+- [x] Merge "other" and "notes"
 - [ ] Search (type to filter by any string)
 
 Next (requires my own data entry and/or backend):
 
 - [ ] Offline mode with Session Workers or App Cache
+
+Next (refactoring):
+
+- [ ] Use global styles for e.g. links?
 
 Next (infra):
 

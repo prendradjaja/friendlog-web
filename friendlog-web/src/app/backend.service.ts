@@ -75,14 +75,13 @@ export class Row {
   // - Row.headers
   // - Row's attributes
   // - Parser.parseRow
-  static headers = ["Timestamp","Who","Combine with previous entry?","When","What","Notes","Other"];
+  static headers = ["Timestamp","Who","Combine with previous entry?","When","What","Notes"];
   createdAt: string;  // When was the entry recorded?
   who: string;
   combine: boolean;
   when: string;  // When was the hangout?
   what: string;
   notes: string;
-  other: string;
 }
 
 class Parser {
@@ -90,6 +89,7 @@ class Parser {
 
   parse(rows: string[][]): Row[] {
     if (! this.headerEqualsExpected(rows)) {
+      window.alert("Schema changed")
       return null;
     }
     const ret = [];
@@ -108,7 +108,6 @@ class Parser {
     ret.when = row[D];
     ret.what = row[E];
     ret.notes = row[F];
-    ret.other = row[G];
     return ret;
   }
 
