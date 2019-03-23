@@ -219,6 +219,7 @@ It'll be nice to get rid of the `combine` hack.
 **NEXT:**
 
 - Merge "other" and "notes"
+- Remove "last entry" support (prep for removing "combine")
 
 ----
 

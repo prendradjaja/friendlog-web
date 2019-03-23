@@ -11,11 +11,6 @@
     </span>
   </header>
   <a [attr.href]="newEntryUrl">New entry</a>
-  &sdot;
-  <a [attr.href]="newCombinedEntryUrl">From last</a>
-  <span id="last-entry">
-    ({{lastEntrySummary()}})
-  </span>
   <div id="toggle-filters">
     <a href="#" (click)="toggleFilters()">Filter by</a>
     (<a href="#" (click)="toggleMerge()">{{ mergeGroups ? 'Merged' : 'Normal' }}</a>)

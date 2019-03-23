@@ -15,13 +15,11 @@ export class AppComponent implements OnInit {
   mergeGroups = false;
 
   newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
-  newCombinedEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform?usp=pp_url&entry.891050226=Yes';
 
   exampleRowFull: Row;
 
   activeFilter: string;
 
-  private lastRow: Row;
   // Only fetched once. Copy, don't mutate.
   private allRows: Row[];
 
@@ -74,7 +72,6 @@ export class AppComponent implements OnInit {
   }
 
   private onRowsReceived(allRows: Row[]) {
-    this.lastRow = allRows[allRows.length - 1];
     this.allRows = allRows;
     this.reset();
   }
@@ -114,33 +111,6 @@ export class AppComponent implements OnInit {
     );
     this.rows.sort(rowComparator);
   }
-
-  public lastEntrySummary(): string {
-    const last = this.lastRow;
-    if (last) {
-      return ellipsify(
-        [last.combine ? 'combine' : null, last.when, last.who, last.what, hideRedactions(last.notes)]
-        .filter(x => x).join(', ')
-      );
-    } else {
-      return '...';
-    }
-  }
-}
-
-function hideRedactions(x: string) {
-  if (x && x.indexOf('~') !== -1) {
-    return '[contains redaction]';
-  } else {
-    return x;
-  }
-}
-
-function ellipsify(s: string, maxLength = 50): string {
-  if (s.length > maxLength) {
-    return s.substring(0, maxLength) + '...';
-  }
-  return s;
 }
 
 function isNonEmpty(row: Row): boolean {
