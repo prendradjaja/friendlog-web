@@ -220,7 +220,9 @@ It'll be nice to get rid of the `combine` hack.
 
 - Merge "other" and "notes"
 - Remove "last entry" support (prep for removing "combine")
+- Remove "New entry" link now that I have a fab
 
+
 ----
 
 Next (features):
