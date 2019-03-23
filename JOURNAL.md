@@ -216,11 +216,12 @@ It'll be nice to get rid of the `combine` hack.
 
 ## 3/23
 
-**NEXT:**
+**v0.1.28:**
 
-- Merge "other" and "notes"
+- (Schema change) Merge "other" and "notes"
 - Remove "last entry" support (prep for removing "combine")
 - Remove "New entry" link now that I have a fab
+- (Schema change) Remove "Combine"
 
 
 ----
@@ -235,6 +236,9 @@ Next (features):
 - [ ] Group events by date
 - [x] Merge "other" and "notes"
 - [ ] Search (type to filter by any string)
+- [ ] Paging handling (or at least warn when hitting API limit)
+- [ ] filter todos
+- [ ] bug: future dates display as "today"
 
 Next (requires my own data entry and/or backend):
 

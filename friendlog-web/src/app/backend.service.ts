@@ -75,10 +75,9 @@ export class Row {
   // - Row.headers
   // - Row's attributes
   // - Parser.parseRow
-  static headers = ["Timestamp","Who","Combine with previous entry?","When","What","Notes"];
+  static headers = ["Timestamp","Who","When","What","Notes"];
   createdAt: string;  // When was the entry recorded?
   who: string;
-  combine: boolean;
   when: string;  // When was the hangout?
   what: string;
   notes: string;
@@ -104,10 +103,9 @@ class Parser {
     const ret = new Row();
     ret.createdAt = row[A];
     ret.who = row[B];
-    ret.combine = !!row[C];
-    ret.when = row[D];
-    ret.what = row[E];
-    ret.notes = row[F];
+    ret.when = row[C];
+    ret.what = row[D];
+    ret.notes = row[E];
     return ret;
   }
 

@@ -43,7 +43,6 @@ export class AppComponent implements OnInit {
 
     this.exampleRowFull = new Row();
     this.exampleRowFull.who = 'Jane Doe';
-    this.exampleRowFull.combine = false;
     this.exampleRowFull.when = 'asdf';
     this.exampleRowFull.what = 'Coffee';
     this.exampleRowFull.notes = 'Some notes';
