@@ -239,6 +239,8 @@ Next (features):
 - [ ] Paging handling (or at least warn when hitting API limit)
 - [ ] filter todos
 - [ ] bug: future dates display as "today"
+- [ ] Keyboard shortcut or something for desktop?
+- [ ] a11y: Audit use of buttons and anchors
 
 Next (requires my own data entry and/or backend):
 

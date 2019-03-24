@@ -1,4 +1,18 @@
 <!-- Is there a way to combine the below component into this one? -->
-<p *ngFor="let line of lines">
-    <app-paragraph-formatter [line]="line"></app-paragraph-formatter>
-</p>
+<ng-container *ngIf="lines.length <= maxLines; else many_lines">
+    <p *ngFor="let line of lines">
+        <app-paragraph-formatter [line]="line"></app-paragraph-formatter>
+    </p>
+</ng-container>
+
+<ng-template #many_lines>
+    <p *ngFor="let line of lines.slice(0, maxLines)">
+        <app-paragraph-formatter [line]="line"></app-paragraph-formatter>
+    </p>
+    <ng-container *ngIf="showMore">
+        <p *ngFor="let line of lines.slice(maxLines)">
+            <app-paragraph-formatter [line]="line"></app-paragraph-formatter>
+        </p>
+    </ng-container>
+    <a style="cursor: pointer" (click)="toggleShowMore()">{{ showMore ? 'Show less' : 'Show more' }}</a>
+</ng-template>
