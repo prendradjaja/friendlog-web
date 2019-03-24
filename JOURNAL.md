@@ -223,6 +223,10 @@ It'll be nice to get rid of the `combine` hack.
 - Remove "New entry" link now that I have a fab
 - (Schema change) Remove "Combine"
 
+## 3/24
+
+**v0.1.29:** "Show more"
+
 
 ----
 
