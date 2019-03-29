@@ -227,13 +227,16 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.29:** "Show more"
 
+## 3/29
+
+**v0.1.30:** (Nothing user visible) Fix directory structure
+
 
 ----
 
 Next (features):
 
-- [ ] Keep all URLs secret
-    - I can do this by (instead of prompting for just API key) prompting for a concatenated secret consisting of API key + form URL + sheet URL
+- [ ] Keep all URLs secret like Bookworm
     - [ ] And then link to responses sheet
 - [ ] Good caching
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
@@ -259,7 +262,7 @@ Next (infra):
 - [ ] Prettier
 - [ ] CD (not one-button deploy -- and don't make deploys easier unless it's CD, so I'm forced to learn Travis or something)
 - [ ] Use lodash
-- [ ] Unfuck my nested dirs / multiple package.jsons situation
+- [x] Unfuck my nested dirs / multiple package.jsons situation
 
 Probably don't do:
 - Group events by "combine" (combine is a hack that I shouldn't sink time into when I will want a better solution anyway)
