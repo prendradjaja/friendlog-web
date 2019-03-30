@@ -235,7 +235,6 @@ It'll be nice to get rid of the `combine` hack.
 ----
 
 Next (features):
-
 - [ ] Keep all URLs secret like Bookworm
     - [ ] And then link to responses sheet
 - [ ] Good caching
@@ -250,15 +249,12 @@ Next (features):
 - [ ] a11y: Audit use of buttons and anchors
 
 Next (requires my own data entry and/or backend):
-
 - [ ] Offline mode with Session Workers or App Cache
 
 Next (refactoring):
-
 - [ ] Use global styles for e.g. links?
 
 Next (infra):
-
 - [ ] Prettier
 - [ ] CD (not one-button deploy -- and don't make deploys easier unless it's CD, so I'm forced to learn Travis or something)
 - [ ] Use lodash

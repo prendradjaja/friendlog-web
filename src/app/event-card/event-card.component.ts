@@ -34,7 +34,9 @@ function formatDate(_d: string) {
   const endOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(),23,59,59,99).getTime();
   const DAY = 1000 * 60 * 60 * 24;
   const WEEK = DAY * 7;
-  if (endOfToday - t < DAY) {
+  if (t > endOfToday) {
+    return '(Future) ' + dayOfWeek(d) + ' ' + (d.getMonth() + 1) + '/' + d.getDate();
+  } else if (endOfToday - t < DAY) {
     return 'Today';
   } else if (endOfToday - t < DAY * 2) {
     return 'Yesterday';
