@@ -231,6 +231,10 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.30:** (Nothing user visible) Fix directory structure
 
+**NEXT:**
+
+- fix future dates display
+
 
 ----
 
@@ -244,7 +248,7 @@ Next (features):
 - [ ] Search (type to filter by any string)
 - [ ] Paging handling (or at least warn when hitting API limit)
 - [ ] filter todos
-- [ ] bug: future dates display as "today"
+- [x] bug: future dates display as "today"
 - [ ] Keyboard shortcut or something for desktop?
 - [ ] a11y: Audit use of buttons and anchors
 
