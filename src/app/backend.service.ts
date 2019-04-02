@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
+import { SecretsService } from './secrets.service';
 
 const READ_CACHE = false;
 const WRITE_CACHE = false;  // READ_CACHE must be false for this to matter
@@ -12,7 +13,7 @@ export class BackendService {
 
   private parser = new Parser();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private secretsService: SecretsService) { }
 
   private getAsPromise(url) {
     const key = 'friendlog/temp-offline/' + url;
@@ -35,10 +36,10 @@ export class BackendService {
 
   // todo get rid of duped code in getFriendGroups
   public get() {
-    const API_KEY=localStorage.getItem('friendlog/google-api-key');
+    const API_KEY=this.secretsService.getApiKey();
     if (API_KEY) {
       const RANGE='A1:G500';
-      const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
+      const SPREADSHEET_ID=this.secretsService.getSheetId();
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.getAsPromise(url).then(
         res => this.parser.parse(res['values'] as string[][]),
@@ -53,10 +54,10 @@ export class BackendService {
   }
 
   public getFriendGroups() {
-    const API_KEY=localStorage.getItem('friendlog/google-api-key');
+    const API_KEY=this.secretsService.getApiKey();
     if (API_KEY) {
       const RANGE='FriendGroups!A1:G500';
-      const SPREADSHEET_ID='1_NXaTShS4WSieqo7CrJQJWjhuJZIkYzE9ZS3KSfj_-c';
+      const SPREADSHEET_ID=this.secretsService.getSheetId();
       const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.getAsPromise(url).then(
         res => this.parser.parseFriendGroups(res['values'] as string[][]),

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService, Row } from './backend.service';
+import { SecretsService } from './secrets.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   allFriendGroups: string[][];
   mergeGroups = false;
 
-  newEntryUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfrEoQFScVs_hleOQ9TU0-vev62_UK8mwYgEYOLC1sPwUK4dw/viewform';
+  newEntryUrl: string;
 
   exampleRowFull: Row;
 
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
   // Only fetched once. Copy, don't mutate.
   private allRows: Row[];
 
-  constructor (private backendService: BackendService) {}
+  constructor (private backendService: BackendService, private secretsService: SecretsService) {}
 
   ngOnInit() {
     this.backendService.getFriendGroups().then(x => {
@@ -33,13 +34,16 @@ export class AppComponent implements OnInit {
     this.backendService.get().then(
       allRows => this.onRowsReceived(allRows),
       err => {
-        const key = window.prompt('Set key (leave blank for no action)');
-        if (key) {
-          localStorage.setItem('friendlog/google-api-key', key);
-          location.reload();
-        }
+        // const key = window.prompt('Set key (leave blank for no action)');
+        // if (key) {
+        //   localStorage.setItem('friendlog/google-api-key', key);
+        //   location.reload();
+        // }
       }
     );
+
+    const formId = this.secretsService.getFormId();
+    this.newEntryUrl = `https://docs.google.com/forms/d/e/${formId}/viewform`;
 
     this.exampleRowFull = new Row();
     this.exampleRowFull.who = 'Jane Doe';
