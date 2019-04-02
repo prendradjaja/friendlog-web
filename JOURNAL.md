@@ -231,9 +231,12 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.30:** (Nothing user visible) Fix directory structure
 
-**NEXT:**
+## 3/29-4/1
+
+**v0.1.31:**
 
 - fix future dates display
+- Secrets service
 
 
 ----
