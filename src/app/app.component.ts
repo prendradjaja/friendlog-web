@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { BackendService, Row } from './backend.service';
 import { SecretsService } from './secrets.service';
 
@@ -113,6 +113,14 @@ export class AppComponent implements OnInit {
       .filter(isNonEmpty)
     );
     this.rows.sort(rowComparator);
+  }
+
+  @HostListener("document:keypress", ["$event"])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const C = 99;
+    if (event.keyCode === C) {
+      window.location.href = this.newEntryUrl;
+    }
   }
 }
 

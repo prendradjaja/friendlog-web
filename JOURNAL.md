@@ -238,6 +238,10 @@ It'll be nice to get rid of the `combine` hack.
 - fix future dates display
 - Secrets service
 
+## 4/6
+
+**v0.1.32:** Keyboard shortcut "c"
+
 
 ----
 
