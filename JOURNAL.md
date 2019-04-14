@@ -242,14 +242,25 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.32:** Keyboard shortcut "c"
 
+## 4/14
+
+**NEXT:**
+
+- Multi-person support
+
 
 ----
 
+Today:
+- [ ] Multi-person support
+- [ ] Link to responses sheet
+- [ ] "Other" support?
+
 Next (features):
-- [ ] Keep all URLs secret like Bookworm
-    - [ ] And then link to responses sheet
+- [x] Keep all URLs secret like Bookworm
 - [ ] Good caching
 - [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
+- [ ] Add "other" support?
 - [ ] Group events by date
 - [x] Merge "other" and "notes"
 - [ ] Search (type to filter by any string)
@@ -286,3 +297,4 @@ Implementation details for multi-person support with Google Forms:
 - Displaying and filtering
     - Just display ppl's names in alpha order
     - When filtering for e.g. Alice, any event with Alice (e.g. dinner with Alice and Bob) should count
+

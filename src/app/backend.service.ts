@@ -81,12 +81,20 @@ export class Row {
   // - Row.headers
   // - Row's attributes
   // - Parser.parseRow
-  static headers = ["Timestamp", "Who", "When", "What", "Notes"];
+  static headers = [
+    "Timestamp",
+    "Who",
+    "When",
+    "What",
+    "Notes",
+    "Who? (Multiple)"
+  ];
   createdAt: string; // When was the entry recorded?
   who: string;
   when: string; // When was the hangout?
   what: string;
   notes: string;
+  whoMultiple: string[];
 }
 
 class Parser {
@@ -105,11 +113,12 @@ class Parser {
     const [A, B, C, D, E, F, G] = [0, 1, 2, 3, 4, 5, 6];
 
     const ret = new Row();
-    ret.createdAt = row[A];
+    ret.createdAt = row[A]; // todo maybe should just parse dates here
     ret.who = row[B];
     ret.when = row[C];
     ret.what = row[D];
     ret.notes = row[E];
+    ret.whoMultiple = row[F] && row[F].split(", ");
     return ret;
   }
 

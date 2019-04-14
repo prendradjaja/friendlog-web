@@ -2,7 +2,17 @@
   <div *ngIf="row.who || row.what" class="whowhat">
     <!-- Should this be a button or a link? -->
     <!-- How does (click)= work? <a> isn't an Angular component... is it? -->
-    <a href="#" *ngIf="row.who" class="who" (click)="handleClick(row.who)">{{row.who}}</a>
+    <ng-container *ngIf="row.who">
+      <ng-container *ngIf="!row.whoMultiple else multiple">
+        <a href="#" class="who" (click)="handleClick(row.who)">{{row.who}}</a>
+      </ng-container>
+      <ng-template #multiple>
+        <ng-container *ngFor="let who of row.whoMultiple; let last = last">
+          <a href="#" class="who" (click)="handleClick(who)">{{who}}</a><span *ngIf="!last">, </span>
+          <!-- Is it possible to have the above line on multiple lines without the newline becoming a space before the comma in the app -->
+        </ng-container>
+      </ng-template>
+    </ng-container>
     <span *ngIf="row.who && row.what"> &mdash; </span>
     <span *ngIf="row.what">{{row.what}}</span>
   </div>

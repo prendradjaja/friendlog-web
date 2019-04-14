@@ -84,7 +84,9 @@ export class AppComponent implements OnInit {
 
   public filterByWho(who: string) {
     this.activeFilter = who;
-    this.rows = this.rows.filter(x => x.who === who);
+    this.rows = this.rows.filter(
+      x => x.who === who || (x.whoMultiple && x.whoMultiple.includes(who))
+    );
   }
 
   public filterByPhone() {
