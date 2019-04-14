@@ -249,6 +249,7 @@ It'll be nice to get rid of the `combine` hack.
 **NEXT:**
 
 - Link to responses sheet
+- Bugfix for FAB position/long URLs. See [Bookworm](https://github.com/prendradjaja/bookworm/commit/c00cde378e1b363fdd81c8a955711bf34887ab87)
 
 
 ----

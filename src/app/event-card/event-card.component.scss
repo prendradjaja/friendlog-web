@@ -5,6 +5,8 @@
   padding: 8px;
   margin-bottom: 8px;
 
+  overflow: hidden;
+
   & > div:not(:last-child) {
     margin-bottom: 6px;
   }
