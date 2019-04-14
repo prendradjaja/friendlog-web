@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   mergeGroups = false;
 
   newEntryUrl: string;
+  sheetUrl: string;
 
   exampleRowFull: Row;
 
@@ -53,6 +54,9 @@ export class AppComponent implements OnInit {
     this.exampleRowFull.when = "asdf";
     this.exampleRowFull.what = "Coffee";
     this.exampleRowFull.notes = "Some notes";
+
+    const sheetId = this.secretsService.getSheetId();
+    this.sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/edit`;
   }
 
   private updateFriendGroups() {

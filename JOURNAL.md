@@ -246,11 +246,15 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.33:** Multi-person support
 
+**NEXT:**
+
+- Link to responses sheet
+
 
 ----
 
 Easy:
-- [ ] Link to responses sheet
+- [x] Link to responses sheet
 - [ ] "Other" support?
 - [ ] Filter by TODO? also bookworm?
 

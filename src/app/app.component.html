@@ -6,8 +6,9 @@
     <h1>
       <a href="#" (click)="reset()">Friendlog</a>
     </h1>
-    <span>
+    <span id="extra-links">
       <a href="https://github.com/prendradjaja/friendlog-web">GitHub</a>
+      <a *ngIf="sheetUrl" [attr.href]="sheetUrl">Sheet</a>
     </span>
   </header>
   <div id="toggle-filters">

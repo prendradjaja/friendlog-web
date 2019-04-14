@@ -13,6 +13,13 @@ header {
   }
 }
 
+#extra-links {
+  a:not(:last-child)::after {
+    content: " · ";
+    color: gray;
+  }
+}
+
 #last-entry {
   color: gray;
 }
