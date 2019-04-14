@@ -244,7 +244,7 @@ It'll be nice to get rid of the `combine` hack.
 
 ## 4/14
 
-**NEXT:**
+**v0.1.33:**
 
 - Multi-person support
 
