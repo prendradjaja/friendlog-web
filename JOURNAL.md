@@ -251,15 +251,16 @@ It'll be nice to get rid of the `combine` hack.
 
 ----
 
-Today:
-- [ ] Multi-person support
+Easy:
 - [ ] Link to responses sheet
 - [ ] "Other" support?
+- [ ] Filter by TODO? also bookworm?
 
 Next (features):
+- [ ] Calendar (wip branch?)
 - [x] Keep all URLs secret like Bookworm
 - [ ] Good caching
-- [ ] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
+- [x] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)
 - [ ] Add "other" support?
 - [ ] Group events by date
 - [x] Merge "other" and "notes"
