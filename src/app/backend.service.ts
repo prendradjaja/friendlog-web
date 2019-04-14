@@ -1,29 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 import { HttpClient } from "@angular/common/http";
-import { SecretsService } from './secrets.service';
+import { SecretsService } from "./secrets.service";
 
 const READ_CACHE = false;
-const WRITE_CACHE = false;  // READ_CACHE must be false for this to matter
+const WRITE_CACHE = false; // READ_CACHE must be false for this to matter
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class BackendService {
-
   private parser = new Parser();
 
-  constructor(private http: HttpClient, private secretsService: SecretsService) { }
+  constructor(
+    private http: HttpClient,
+    private secretsService: SecretsService
+  ) {}
 
   private getAsPromise(url) {
-    const key = 'friendlog/temp-offline/' + url;
+    const key = "friendlog/temp-offline/" + url;
     if (!READ_CACHE) {
-      return this.http.get(url).toPromise().then(x => {
-        if (WRITE_CACHE) {
-          localStorage.setItem(key, JSON.stringify(x));
-        }
-        return x;
-      });
+      return this.http
+        .get(url)
+        .toPromise()
+        .then(x => {
+          if (WRITE_CACHE) {
+            localStorage.setItem(key, JSON.stringify(x));
+          }
+          return x;
+        });
     } else {
       const cached = localStorage.getItem(key);
       if (cached) {
@@ -36,15 +41,15 @@ export class BackendService {
 
   // todo get rid of duped code in getFriendGroups
   public get() {
-    const API_KEY=this.secretsService.getApiKey();
+    const API_KEY = this.secretsService.getApiKey();
     if (API_KEY) {
-      const RANGE='A1:G500';
-      const SPREADSHEET_ID=this.secretsService.getSheetId();
-      const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+      const RANGE = "A1:G500";
+      const SPREADSHEET_ID = this.secretsService.getSheetId();
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.getAsPromise(url).then(
-        res => this.parser.parse(res['values'] as string[][]),
+        res => this.parser.parse(res["values"] as string[][]),
         err => {
-          window.alert('Error fetching from db');
+          window.alert("Error fetching from db");
           return [];
         }
       );
@@ -54,13 +59,13 @@ export class BackendService {
   }
 
   public getFriendGroups() {
-    const API_KEY=this.secretsService.getApiKey();
+    const API_KEY = this.secretsService.getApiKey();
     if (API_KEY) {
-      const RANGE='FriendGroups!A1:G500';
-      const SPREADSHEET_ID=this.secretsService.getSheetId();
-      const url=`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+      const RANGE = "FriendGroups!A1:G500";
+      const SPREADSHEET_ID = this.secretsService.getSheetId();
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
       return this.getAsPromise(url).then(
-        res => this.parser.parseFriendGroups(res['values'] as string[][]),
+        res => this.parser.parseFriendGroups(res["values"] as string[][]),
         err => {
           return [];
         }
@@ -76,20 +81,18 @@ export class Row {
   // - Row.headers
   // - Row's attributes
   // - Parser.parseRow
-  static headers = ["Timestamp","Who","When","What","Notes"];
-  createdAt: string;  // When was the entry recorded?
+  static headers = ["Timestamp", "Who", "When", "What", "Notes"];
+  createdAt: string; // When was the entry recorded?
   who: string;
-  when: string;  // When was the hangout?
+  when: string; // When was the hangout?
   what: string;
   notes: string;
 }
 
 class Parser {
-  
-
   parse(rows: string[][]): Row[] {
-    if (! this.headerEqualsExpected(rows)) {
-      window.alert("Schema changed")
+    if (!this.headerEqualsExpected(rows)) {
+      window.alert("Schema changed");
       return null;
     }
     const ret = [];
@@ -99,7 +102,7 @@ class Parser {
     return ret;
   }
   parseRow(row: string[]): Row {
-    const [A,B,C,D,E,F,G] = [0,1,2,3,4,5,6];
+    const [A, B, C, D, E, F, G] = [0, 1, 2, 3, 4, 5, 6];
 
     const ret = new Row();
     ret.createdAt = row[A];

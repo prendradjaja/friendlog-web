@@ -1,11 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { BackendService, Row } from './backend.service';
-import { SecretsService } from './secrets.service';
+import { Component, OnInit, HostListener } from "@angular/core";
+import { BackendService, Row } from "./backend.service";
+import { SecretsService } from "./secrets.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
   rows: Row[] = [];
@@ -24,7 +24,10 @@ export class AppComponent implements OnInit {
   // Only fetched once. Copy, don't mutate.
   private allRows: Row[];
 
-  constructor (private backendService: BackendService, private secretsService: SecretsService) {}
+  constructor(
+    private backendService: BackendService,
+    private secretsService: SecretsService
+  ) {}
 
   ngOnInit() {
     this.backendService.getFriendGroups().then(x => {
@@ -46,10 +49,10 @@ export class AppComponent implements OnInit {
     this.newEntryUrl = `https://docs.google.com/forms/d/e/${formId}/viewform`;
 
     this.exampleRowFull = new Row();
-    this.exampleRowFull.who = 'Jane Doe';
-    this.exampleRowFull.when = 'asdf';
-    this.exampleRowFull.what = 'Coffee';
-    this.exampleRowFull.notes = 'Some notes';
+    this.exampleRowFull.who = "Jane Doe";
+    this.exampleRowFull.when = "asdf";
+    this.exampleRowFull.what = "Coffee";
+    this.exampleRowFull.notes = "Some notes";
   }
 
   private updateFriendGroups() {
@@ -85,10 +88,10 @@ export class AppComponent implements OnInit {
   }
 
   public filterByPhone() {
-    this.activeFilter = 'Phone';
+    this.activeFilter = "Phone";
     this.rows = this.rows.filter(x => {
       const text = `${x.what} ${x.notes}`;
-      if (text.toLowerCase().indexOf('phone') !== -1) {
+      if (text.toLowerCase().indexOf("phone") !== -1) {
         return true;
       } else {
         return false;
@@ -107,11 +110,10 @@ export class AppComponent implements OnInit {
 
   public reset() {
     this.activeFilter = null;
-    this.rows = (
-      this.allRows.slice()
+    this.rows = this.allRows
+      .slice()
       // .slice(allRows.length - 5)
-      .filter(isNonEmpty)
-    );
+      .filter(isNonEmpty);
     this.rows.sort(rowComparator);
   }
 
@@ -138,7 +140,8 @@ function toTimestamp(d: string): number {
 function compare(x, y) {
   if (x < y) {
     return 1;
-  } else { // x > y because of x !== y
+  } else {
+    // x > y because of x !== y
     return -1;
   }
 }

@@ -1,117 +1,117 @@
 :host {
-    padding-left: 12px;
-    padding-right: 12px;
-    display: block;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: block;
 }
 
 header {
-    h1 {
-        display: inline-block;
-    }
-    span {
-        margin-left: 10px;
-    }
+  h1 {
+    display: inline-block;
+  }
+  span {
+    margin-left: 10px;
+  }
 }
 
 #last-entry {
-    color: gray;
+  color: gray;
 }
 #cards {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 a {
-    color: #184489;
-    text-decoration: none;
+  color: #184489;
+  text-decoration: none;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 8px;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 #filters-container {
-    margin-top: 8px;
-    padding-left: 20px;
+  margin-top: 8px;
+  padding-left: 20px;
 
-    .filter-group {
-        span:not(:last-child)::after {
-            content: ' · ';
-        }
-        &:not(:last-child) {
-            margin-bottom: 8px;
-        }
+  .filter-group {
+    span:not(:last-child)::after {
+      content: " · ";
     }
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 // The term FAB comes from Material Design
 a#new-entry-fab {
-    $diameter: 50px;
-    $radius: $diameter / 2;
-    $offset: 30px;
-    $line-height: $diameter - 8px;
-    $font-size: 42px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  $diameter: 50px;
+  $radius: $diameter / 2;
+  $offset: 30px;
+  $line-height: $diameter - 8px;
+  $font-size: 42px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 
-    display: block;
-    height: $diameter;
-    width: $diameter;
-    border-radius: $radius;
+  display: block;
+  height: $diameter;
+  width: $diameter;
+  border-radius: $radius;
 
-    position: fixed;
-    bottom: $offset;
-    right: $offset;
+  position: fixed;
+  bottom: $offset;
+  right: $offset;
 
-    background: #184489;
-    color: white;
-    text-align: center;
-    line-height: $line-height;
-    font-size: $font-size;
-    font-weight: 300;
+  background: #184489;
+  color: white;
+  text-align: center;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-weight: 300;
 
-    // :active {
-    //     display: block;
-    //     height: $diameter;
-    //     width: $diameter;
-    //     border-radius: $radius;
-    //     background: lighten(#184489, 10%);
-    // }
+  // :active {
+  //     display: block;
+  //     height: $diameter;
+  //     width: $diameter;
+  //     border-radius: $radius;
+  //     background: lighten(#184489, 10%);
+  // }
 
-    // Adapted from https://jsfiddle.net/psullivan6/0eL3jezk/
-    .plus-icon {
-        $size: 22px;
-        $thickness: 3px;
+  // Adapted from https://jsfiddle.net/psullivan6/0eL3jezk/
+  .plus-icon {
+    $size: 22px;
+    $thickness: 3px;
 
-        position: relative;
-        top: ($diameter - $size) / 2;
-        left: ($diameter - $size) / 2;
+    position: relative;
+    top: ($diameter - $size) / 2;
+    left: ($diameter - $size) / 2;
 
-        width: $size;
-        height: $size;
+    width: $size;
+    height: $size;
 
-        &:before,
-        &:after{
-            content: "";
-            position: absolute;
-            background-color: white;
-        }
-
-        // Vertical line
-        &:before{
-            top: 0;
-            left: 50%;
-            width: $thickness;
-            height: 100%;
-            margin-left: -$thickness / 2;
-        }
-
-        // Horizontal line
-        &:after{
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: $thickness;
-            margin-top: -$thickness / 2;
-        }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: white;
     }
+
+    // Vertical line
+    &:before {
+      top: 0;
+      left: 50%;
+      width: $thickness;
+      height: 100%;
+      margin-left: -$thickness / 2;
+    }
+
+    // Horizontal line
+    &:after {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: $thickness;
+      margin-top: -$thickness / 2;
+    }
+  }
 }

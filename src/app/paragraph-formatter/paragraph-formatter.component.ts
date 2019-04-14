@@ -1,12 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-paragraph-formatter',
-  templateUrl: './paragraph-formatter.component.html',
-  styleUrls: ['./paragraph-formatter.component.scss']
+  selector: "app-paragraph-formatter",
+  templateUrl: "./paragraph-formatter.component.html",
+  styleUrls: ["./paragraph-formatter.component.scss"]
 })
 export class ParagraphFormatterComponent implements OnInit {
-
   @Input() line: string;
 
   fragments: {
@@ -14,21 +13,21 @@ export class ParagraphFormatterComponent implements OnInit {
     text: string;
   }[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.fragments = [];
     let curr = {
       redacted: false,
-      text: '',
+      text: ""
     };
     for (let i = 0; i < this.line.length; i++) {
       const char = this.line.charAt(i);
-      if (char === '~') {
+      if (char === "~") {
         this.fragments.push(curr);
         curr = {
           redacted: !curr.redacted,
-          text: '',
+          text: ""
         };
       } else {
         curr.text += char;
@@ -37,5 +36,4 @@ export class ParagraphFormatterComponent implements OnInit {
     // todo handle mismatched ~s (with current impl, unclosed ~ means "redacted til end")
     this.fragments.push(curr);
   }
-
 }
