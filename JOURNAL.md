@@ -261,8 +261,11 @@ Easy:
 - [x] Link to responses sheet
 - [ ] "Other" support?
 - [ ] Filter by TODO? also bookworm?
+- [ ] Overflow hidden bugfix like in bookworm
+- [ ] "prevent text scaling css" was what i needed to google!! https://stackoverflow.com/questions/31917088/how-to-prevent-mobile-devices-to-scale-font-size
 
 Next (features):
+- [ ] Change my URLs
 - [ ] Calendar (wip branch?)
 - [x] Keep all URLs secret like Bookworm
 - [ ] Good caching
