@@ -106,6 +106,17 @@ export class AppComponent implements OnInit {
     });
   }
 
+  public filterByTodo() {
+    this.activeFilter = "Todo";
+    this.rows = this.rows.filter(x => {
+      if (x.what && x.what.indexOf("TODO") !== -1) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }

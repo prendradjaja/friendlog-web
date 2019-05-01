@@ -40,6 +40,13 @@
           Phone
         </a>
       </span>
+      <span>
+        <a href="#"
+            [style.font-weight]="activeFilter === 'Todo' ? 'bold' : 'normal'"
+            (click)="reset(); filterByTodo()">
+          Todo
+        </a>
+      </span>
     </li>
   </ul>
 </div>
