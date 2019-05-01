@@ -246,10 +246,13 @@ It'll be nice to get rid of the `combine` hack.
 
 **v0.1.33:** Multi-person support
 
-**NEXT:**
+## 4/14-4/30
+
+**v0.1.34:**
 
 - Link to responses sheet
 - Bugfix for FAB position/long URLs. See [Bookworm](https://github.com/prendradjaja/bookworm/commit/c00cde378e1b363fdd81c8a955711bf34887ab87)
+- Filter by TODO
 
 
 ----
