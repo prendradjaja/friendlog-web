@@ -119,7 +119,15 @@ export class AppComponent implements OnInit {
 
   public filterByDate(d: Date) {
     this.reset();
-    this.rows = this.rows.filter(x => stos(x.when) === dtos(d));
+    this.rows = this.rows.filter(x => {
+      // todo CalendarViewComponent#computeEventsByDate (anywhere else?) also does this "when OR createdAt" logic
+      // should dedupe that
+      if (x.when) {
+        return stos(x.when) === dtos(d);
+      } else {
+        return stos(x.createdAt) === dtos(d);
+      }
+    });
   }
 
   toggleFilters() {
