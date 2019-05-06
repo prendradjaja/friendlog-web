@@ -1,15 +1,22 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy,
+  OnChanges,
+  Output,
+  EventEmitter
+} from "@angular/core";
 // import { Row } from '../backend.service';
-import { ColorService } from 'src/app/color.service';
+import { ColorService } from "src/app/color.service";
 
 @Component({
-  selector: 'calendar-view',
-  templateUrl: './calendar-view.component.html',
-  styleUrls: ['./calendar-view.component.scss'],
+  selector: "calendar-view",
+  templateUrl: "./calendar-view.component.html",
+  styleUrls: ["./calendar-view.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarViewComponent implements OnInit, OnChanges {
-
   @Input() allRows: Row[];
   @Input() who: string;
   @Output() filterByDate = new EventEmitter<Date>();
@@ -19,14 +26,14 @@ export class CalendarViewComponent implements OnInit, OnChanges {
   showFullCalendar = true;
   private eventsByDate: { [date: string]: Row[] };
 
-  constructor(private colorService: ColorService) { }
+  constructor(private colorService: ColorService) {}
 
   ngOnInit() {
-    const foos = window['cals'] = window['cals'] || []; // ptodo-debug
-    const el = this['pdebugEl'] && this['pdebugEl']['nativeElement'];
-    el && el.setAttribute('pdebugIndex', 'cal.' + foos.length);
+    const foos = (window["cals"] = window["cals"] || []); // ptodo-debug
+    const el = this["pdebugEl"] && this["pdebugEl"]["nativeElement"];
+    el && el.setAttribute("pdebugIndex", "cal." + foos.length);
     foos.push(this);
-    window['cal'] = this;
+    window["cal"] = this;
   }
 
   ngOnChanges() {
@@ -47,23 +54,22 @@ export class CalendarViewComponent implements OnInit, OnChanges {
   }
 
   public clickCalendarDay(e) {
-    this.filterByDate.emit(e.fullDate as Date);  // ptodo emit filter event
+    this.filterByDate.emit(e.fullDate as Date); // ptodo emit filter event
     this.activeCalendarDay = e.fullDate;
   }
-
 
   private computeEventsByDate(): void {
     this.eventsByDate = {};
     this.allRows
-    .filter(x => !this.who || x.who === this.who)
-    .forEach(row => {
-      const key = stos(row.when);
-      if (this.eventsByDate[key]) {
-        this.eventsByDate[key].push(row);
-      } else {
-        this.eventsByDate[key] = [row];
-      }
-    });
+      .filter(x => !this.who || x.who === this.who)
+      .forEach(row => {
+        const key = stos(row.when);
+        if (this.eventsByDate[key]) {
+          this.eventsByDate[key].push(row);
+        } else {
+          this.eventsByDate[key] = [row];
+        }
+      });
   }
 
   private computeWeeks() {
@@ -85,7 +91,7 @@ export class CalendarViewComponent implements OnInit, OnChanges {
             colors.add(
               this.colorService.getColor(row.who)
               // 'blue'
-            )
+            );
           });
           if (colors.size === 1) {
             day.color = oneItemSetToItem(colors);
@@ -94,7 +100,7 @@ export class CalendarViewComponent implements OnInit, OnChanges {
             // todo the more frequent one should be on top
             [day.rightColor, day.topColor] = twoItemSetToArray(colors);
           } else {
-            day.color = 'black';
+            day.color = "black";
           }
           day.numEvents = todaysEvents.length;
 
@@ -111,7 +117,6 @@ export class CalendarViewComponent implements OnInit, OnChanges {
     }
   }
 }
-
 
 // todo real tz handling? moment?
 function dtos(d: Date) {
@@ -139,9 +144,9 @@ function add(d: Date, days) {
 
 function oneItemSetToItem<T>(s: Set<T>): T {
   if (s.size !== 1) {
-    window.alert('this set is not a one item set')
+    window.alert("this set is not a one item set");
   } else {
-    let items = []
+    let items = [];
     s.forEach(x => items.push(x));
     return items[0];
   }
@@ -149,7 +154,7 @@ function oneItemSetToItem<T>(s: Set<T>): T {
 
 function twoItemSetToArray<T>(s: Set<T>): T[] {
   if (s.size !== 2) {
-    window.alert('this set is not a two item set')
+    window.alert("this set is not a two item set");
   } else {
     let items = [] as T[];
     s.forEach(x => items.push(x));
@@ -158,5 +163,5 @@ function twoItemSetToArray<T>(s: Set<T>): T[] {
 }
 
 function anyIsEnd(rows: Row[]) {
-  return rows.some(x => x.notes === 'end');
+  return rows.some(x => x.notes === "end");
 }

@@ -1,74 +1,73 @@
 $calendar-day-size: 48px;
 
 table.calendar-view {
-    margin-top: 24px;
-    border-spacing: 0;
-    
-    td.calendar-day {
-        padding: 0;
-        $calendar-day-size: 48px;
-        height: $calendar-day-size;
-        width: $calendar-day-size;
-        color: white;
-        border: 1px solid white;
-        cursor: pointer;
-        text-align: center;
-        // todo align with left side?
+  margin-top: 24px;
+  border-spacing: 0;
 
-        &.end-of-book:before {
-            $downsize: 6px;
-            position: absolute;
-            top: $downsize / 2;
-            left: $downsize / 2;
-            width: $calendar-day-size - $downsize;
-            height: $calendar-day-size - $downsize;
-            border-radius: ($calendar-day-size - $downsize)/2;
-            background: white;
-            z-index: 2;
-            opacity: 0.5;
-            content: '';
-        }
+  td.calendar-day {
+    padding: 0;
+    $calendar-day-size: 48px;
+    height: $calendar-day-size;
+    width: $calendar-day-size;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    text-align: center;
+    // todo align with left side?
 
-        .multi-color {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 0px;
-            width: 0px;
-            border-top:48px solid red;
-            border-right:48px solid yellow;
-            z-index: 1;
-        }
-
-        .day-number {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 3;
-            height: $calendar-day-size;
-            width: $calendar-day-size;
-            line-height: $calendar-day-size;
-            font-size: 18px;
-        }
-    
-        position: relative;  // for <calendar-day-dots>
-
-        &.day-selected {
-            border: 1px solid black;
-            .day-number {
-                font-weight: bold;
-            }
-            opacity: 0.5;
-        }
-
-        &:hover:not(.day-selected) {
-            // todo do the same thing that bryant and i did with bookmark indicators? (i.e. even lighter if you re-hover or whatever)
-            opacity: 0.75;
-        }
+    &.end-of-book:before {
+      $downsize: 6px;
+      position: absolute;
+      top: $downsize / 2;
+      left: $downsize / 2;
+      width: $calendar-day-size - $downsize;
+      height: $calendar-day-size - $downsize;
+      border-radius: ($calendar-day-size - $downsize)/2;
+      background: white;
+      z-index: 2;
+      opacity: 0.5;
+      content: "";
     }
+
+    .multi-color {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0px;
+      width: 0px;
+      border-top: 48px solid red;
+      border-right: 48px solid yellow;
+      z-index: 1;
+    }
+
+    .day-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      height: $calendar-day-size;
+      width: $calendar-day-size;
+      line-height: $calendar-day-size;
+      font-size: 18px;
+    }
+
+    position: relative; // for <calendar-day-dots>
+
+    &.day-selected {
+      border: 1px solid black;
+      .day-number {
+        font-weight: bold;
+      }
+      opacity: 0.5;
+    }
+
+    &:hover:not(.day-selected) {
+      // todo do the same thing that bryant and i did with bookmark indicators? (i.e. even lighter if you re-hover or whatever)
+      opacity: 0.75;
+    }
+  }
 }
 
-
 .toggle-row td {
-    text-align: center;
+  text-align: center;
 }
