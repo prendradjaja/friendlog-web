@@ -7,7 +7,7 @@ import {
   Output,
   EventEmitter
 } from "@angular/core";
-// import { Row } from '../backend.service';
+import { Row } from "../backend.service";
 import { ColorService } from "src/app/color.service";
 
 @Component({
@@ -64,7 +64,12 @@ export class CalendarViewComponent implements OnInit, OnChanges {
       this.allRows
         .filter(x => !this.who || x.who === this.who)
         .forEach(row => {
-          const key = stos(row.when);
+          let key;
+          if (row.when) {
+            key = stos(row.when);
+          } else {
+            key = stos(row.createdAt);
+          }
           if (this.eventsByDate[key]) {
             this.eventsByDate[key].push(row);
           } else {
@@ -173,7 +178,7 @@ function anyIsEnd(rows: Row[]) {
 
 function getAnyItem<T>(s: Set<T>): T[] {
   if (s.size < 1) {
-    window.alert("this set is empty");
+    console.log("this set is empty");
   } else {
     let items = [];
     s.forEach(x => items.push(x));
