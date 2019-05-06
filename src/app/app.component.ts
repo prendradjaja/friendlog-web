@@ -11,7 +11,7 @@ import * as moment from "moment";
 export class AppComponent implements OnInit {
   rows: Row[] = [];
 
-  showFilters = true;
+  showFilters = false;
   friendGroups: string[][];
   allFriendGroups: string[][];
   mergeGroups = false;
