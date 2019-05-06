@@ -99,6 +99,8 @@ export class CalendarViewComponent implements OnInit, OnChanges {
                 this.colorService.getColor(row.who)
                 // 'blue'
               );
+            } else {
+              colors.add("black");
             }
           });
           if (colors.size === 1) {
@@ -178,7 +180,7 @@ function anyIsEnd(rows: Row[]) {
 
 function getAnyItem<T>(s: Set<T>): T[] {
   if (s.size < 1) {
-    console.log("this set is empty");
+    window.alert("this set is empty");
   } else {
     let items = [];
     s.forEach(x => items.push(x));
