@@ -62,7 +62,14 @@ export class CalendarViewComponent implements OnInit, OnChanges {
     this.eventsByDate = {};
     this.allRows &&
       this.allRows
-        .filter(x => !this.who || x.who === this.who)
+        .filter(x => {
+          if (this.who !== "NotGabby") {
+            // normal case
+            return !this.who || x.who === this.who;
+          } else {
+            return !this.who || x.who !== "Gabby";
+          }
+        })
         .forEach(row => {
           let key;
           if (row.when) {

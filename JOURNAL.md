@@ -261,6 +261,8 @@ It'll be nice to get rid of the `combine` hack.
 - Add calendar (thanks past self for the WIP branch! tho maybe i should've just merged it at the time lol)
 - Filter by "Not Gabby"
 
+**v0.1.36:** Bad implementation of NotGabby in calendar
+
 ----
 
 A thing I've been thinking about lately is: For a personal proj like this, how can I keep code quality good when I have no particular motivation to improve it or work on it for a long time just to refactor
