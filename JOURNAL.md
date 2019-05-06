@@ -280,6 +280,7 @@ Calendar:
 - [ ] Doesn't work with "Not Gabby", "Phone" etc filters
 
 Easy:
+- [ ] z-index bug for fab
 - [x] Link to responses sheet
 - [ ] "Other" support?
 - [ ] Filter by TODO? also bookworm?
