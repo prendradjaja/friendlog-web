@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   activeFilter: string;
 
   // Only fetched once. Copy, don't mutate.
-  private allRows: Row[];
+  allRows: Row[];
 
   constructor(
     private backendService: BackendService,
