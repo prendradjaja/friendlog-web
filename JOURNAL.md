@@ -256,7 +256,10 @@ It'll be nice to get rid of the `combine` hack.
 
 ## 5/5
 
-**v0.1.35:** Add calendar (thanks past self for the WIP branch! tho maybe i should've just merged it at the time lol)
+**v0.1.35:**
+
+- Add calendar (thanks past self for the WIP branch! tho maybe i should've just merged it at the time lol)
+- Filter by "Not Gabby"
 
 ----
 
@@ -266,6 +269,9 @@ Maybe I can (from the start) do something like "you can implement a feature in a
 
 
 ----
+
+Remove things hardcoded to me:
+- [ ] "Not Gabby" filter
 
 Calendar:
 - [ ] Generalized filter by "not"?
