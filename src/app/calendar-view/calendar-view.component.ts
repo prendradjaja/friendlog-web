@@ -60,16 +60,17 @@ export class CalendarViewComponent implements OnInit, OnChanges {
 
   private computeEventsByDate(): void {
     this.eventsByDate = {};
-    this.allRows
-      .filter(x => !this.who || x.who === this.who)
-      .forEach(row => {
-        const key = stos(row.when);
-        if (this.eventsByDate[key]) {
-          this.eventsByDate[key].push(row);
-        } else {
-          this.eventsByDate[key] = [row];
-        }
-      });
+    this.allRows &&
+      this.allRows
+        .filter(x => !this.who || x.who === this.who)
+        .forEach(row => {
+          const key = stos(row.when);
+          if (this.eventsByDate[key]) {
+            this.eventsByDate[key].push(row);
+          } else {
+            this.eventsByDate[key] = [row];
+          }
+        });
   }
 
   private computeWeeks() {
