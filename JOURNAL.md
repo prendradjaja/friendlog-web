@@ -254,8 +254,28 @@ It'll be nice to get rid of the `combine` hack.
 - Bugfix for FAB position/long URLs. See [Bookworm](https://github.com/prendradjaja/bookworm/commit/c00cde378e1b363fdd81c8a955711bf34887ab87)
 - Filter by TODO
 
+## 5/5
+
+**v0.1.35:**
+
+- Add calendar (thanks past self for the WIP branch! tho maybe i should've just merged it at the time lol)
+- Filter by "Not Gabby"
+
+----
+
+A thing I've been thinking about lately is: For a personal proj like this, how can I keep code quality good when I have no particular motivation to improve it or work on it for a long time just to refactor
+
+Maybe I can (from the start) do something like "you can implement a feature in a hacky way to get it done quickly, but you can't make a new feature until you clean that feature up"? idk
+
 
 ----
+
+Remove things hardcoded to me:
+- [ ] "Not Gabby" filter
+
+Calendar:
+- [ ] Generalized filter by "not"?
+- [ ] Doesn't work with "Not Gabby", "Phone" etc filters
 
 Easy:
 - [x] Link to responses sheet
@@ -266,7 +286,7 @@ Easy:
 
 Next (features):
 - [ ] Change my URLs
-- [ ] Calendar (wip branch?)
+- [x] Calendar (wip branch?)
 - [x] Keep all URLs secret like Bookworm
 - [ ] Good caching
 - [x] Multi-person support with Google Forms "go to section based on answer". (Implementation details below)

@@ -11,7 +11,7 @@ import * as moment from "moment";
 export class AppComponent implements OnInit {
   rows: Row[] = [];
 
-  showFilters = false;
+  showFilters = true;
   friendGroups: string[][];
   allFriendGroups: string[][];
   mergeGroups = false;
@@ -117,6 +117,27 @@ export class AppComponent implements OnInit {
     });
   }
 
+  public filterByNotGabby() {
+    this.activeFilter = "NotGabby";
+    this.rows = this.rows.filter(
+      x => x.who !== "Gabby"
+      // todo lacks whoMultiple support
+    );
+  }
+
+  public filterByDate(d: Date) {
+    this.reset();
+    this.rows = this.rows.filter(x => {
+      // todo CalendarViewComponent#computeEventsByDate (anywhere else?) also does this "when OR createdAt" logic
+      // should dedupe that
+      if (x.when) {
+        return stos(x.when) === dtos(d);
+      } else {
+        return stos(x.createdAt) === dtos(d);
+      }
+    });
+  }
+
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }
@@ -180,3 +201,24 @@ function rowComparator(a: Row, b: Row): number {
     return compare(aCreatedDate, bCreatedDate);
   }
 }
+
+// todo dedupe these
+// todo real tz handling? moment?
+function dtos(d: Date) {
+  // return d.toISOString().split('T')[0];
+  const Y = d.getFullYear();
+  const M = d.getMonth() + 1;
+  const D = d.getDate();
+  return `${M}/${D}/${Y}`;
+}
+
+function stod(s: string) {
+  const temp = new Date(s);
+  // todo discard time portion? how does this work with tzs?
+  return temp;
+}
+
+function stos(s: string) {
+  return dtos(stod(s));
+}
+// more here
