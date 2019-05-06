@@ -88,10 +88,12 @@ export class CalendarViewComponent implements OnInit, OnChanges {
         if (todaysEvents) {
           const colors = new Set();
           todaysEvents.forEach(row => {
-            colors.add(
-              this.colorService.getColor(row.who)
-              // 'blue'
-            );
+            if (row.who) {
+              colors.add(
+                this.colorService.getColor(row.who)
+                // 'blue'
+              );
+            }
           });
           if (colors.size === 1) {
             day.color = oneItemSetToItem(colors);
@@ -100,7 +102,9 @@ export class CalendarViewComponent implements OnInit, OnChanges {
             // todo the more frequent one should be on top
             [day.rightColor, day.topColor] = twoItemSetToArray(colors);
           } else {
-            day.color = "black";
+            day.multiColor = true;
+            day.topColor = getAnyItem(colors);
+            day.rightColor = "white";
           }
           day.numEvents = todaysEvents.length;
 
@@ -164,4 +168,14 @@ function twoItemSetToArray<T>(s: Set<T>): T[] {
 
 function anyIsEnd(rows: Row[]) {
   return rows.some(x => x.notes === "end");
+}
+
+function getAnyItem<T>(s: Set<T>): T[] {
+  if (s.size < 1) {
+    window.alert("this set is empty");
+  } else {
+    let items = [];
+    s.forEach(x => items.push(x));
+    return items[0];
+  }
 }
