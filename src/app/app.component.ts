@@ -119,7 +119,7 @@ export class AppComponent implements OnInit {
 
   public filterByDate(d: Date) {
     this.reset();
-    this.rows = this.rows.filter(x => stos(x.when) === dtos(d))
+    this.rows = this.rows.filter(x => stos(x.when) === dtos(d));
   }
 
   toggleFilters() {
@@ -187,22 +187,22 @@ function rowComparator(a: Row, b: Row): number {
 }
 
 // todo dedupe these
-                                              // todo real tz handling? moment?
-                                              function dtos(d: Date) {
-                                                // return d.toISOString().split('T')[0];
-                                                const Y = d.getFullYear();
-                                                const M = d.getMonth() + 1;
-                                                const D = d.getDate();
-                                                return `${M}/${D}/${Y}`;
-                                              }
+// todo real tz handling? moment?
+function dtos(d: Date) {
+  // return d.toISOString().split('T')[0];
+  const Y = d.getFullYear();
+  const M = d.getMonth() + 1;
+  const D = d.getDate();
+  return `${M}/${D}/${Y}`;
+}
 
-                                              function stod(s: string) {
-                                                const temp = new Date(s);
-                                                // todo discard time portion? how does this work with tzs?
-                                                return temp;
-                                              }
+function stod(s: string) {
+  const temp = new Date(s);
+  // todo discard time portion? how does this work with tzs?
+  return temp;
+}
 
-                                              function stos(s: string) {
-                                                return dtos(stod(s));
-                                              }
+function stos(s: string) {
+  return dtos(stod(s));
+}
 // more here
