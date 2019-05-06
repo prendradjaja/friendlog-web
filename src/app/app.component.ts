@@ -11,7 +11,7 @@ import * as moment from "moment";
 export class AppComponent implements OnInit {
   rows: Row[] = [];
 
-  showFilters = false;
+  showFilters = true;
   friendGroups: string[][];
   allFriendGroups: string[][];
   mergeGroups = false;
@@ -115,6 +115,14 @@ export class AppComponent implements OnInit {
         return false;
       }
     });
+  }
+
+  public filterByNotGabby() {
+    this.activeFilter = "NotGabby";
+    this.rows = this.rows.filter(
+      x => x.who !== "Gabby"
+      // todo lacks whoMultiple support
+    );
   }
 
   public filterByDate(d: Date) {

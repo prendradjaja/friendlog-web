@@ -23,7 +23,7 @@ export class CalendarViewComponent implements OnInit, OnChanges {
 
   weeks = [];
   activeCalendarDay: Date;
-  showFullCalendar = true;
+  showFullCalendar = false;
   private eventsByDate: { [date: string]: Row[] };
 
   constructor(private colorService: ColorService) {}

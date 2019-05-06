@@ -47,6 +47,13 @@
           Todo
         </a>
       </span>
+      <span>
+        <a href="#"
+            [style.font-weight]="activeFilter === 'NotGabby' ? 'bold' : 'normal'"
+            (click)="reset(); filterByNotGabby()">
+          Not Gabby
+        </a>
+      </span>
     </li>
   </ul>
 </div>
