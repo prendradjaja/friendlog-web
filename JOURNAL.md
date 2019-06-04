@@ -278,6 +278,7 @@ Remove things hardcoded to me:
 Calendar:
 - [ ] Generalized filter by "not"?
 - [ ] Doesn't work with "Not Gabby", "Phone" etc filters
+- [ ] Doesn't work with multi-person hangouts
 
 Easy:
 - [ ] z-index bug for fab
@@ -288,6 +289,7 @@ Easy:
 - [ ] "prevent text scaling css" was what i needed to google!! https://stackoverflow.com/questions/31917088/how-to-prevent-mobile-devices-to-scale-font-size
 
 Next (features):
+- [ ] Show last hangouts as color coding in friend list?
 - [ ] Change my URLs
 - [x] Calendar (wip branch?)
 - [x] Keep all URLs secret like Bookworm
